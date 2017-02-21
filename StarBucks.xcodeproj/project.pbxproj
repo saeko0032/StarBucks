@@ -22,6 +22,7 @@
 		EA23DE7A1E5BD549008A6971 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE791E5BD549008A6971 /* Store.m */; };
 		EA23DE7F1E5BD66D008A6971 /* Coffee.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE7C1E5BD66D008A6971 /* Coffee.m */; };
 		EA23DE801E5BD66D008A6971 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE7E1E5BD66D008A6971 /* Order.m */; };
+		EDA8139A1E5BDA8600F1C1B4 /* Starbucks.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA813991E5BDA8600F1C1B4 /* Starbucks.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,8 @@
 		EA23DE7C1E5BD66D008A6971 /* Coffee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coffee.m; sourceTree = "<group>"; };
 		EA23DE7D1E5BD66D008A6971 /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		EA23DE7E1E5BD66D008A6971 /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
+		EDA813981E5BDA8600F1C1B4 /* Starbucks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Starbucks.h; sourceTree = "<group>"; };
+		EDA813991E5BDA8600F1C1B4 /* Starbucks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Starbucks.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,8 @@
 			children = (
 				EA23DE6A1E5BD479008A6971 /* Staff */,
 				EA23DE6E1E5BD4DB008A6971 /* Card */,
+				EDA813981E5BDA8600F1C1B4 /* Starbucks.h */,
+				EDA813991E5BDA8600F1C1B4 /* Starbucks.m */,
 				EA23DE6B1E5BD4BF008A6971 /* Customer.h */,
 				EA23DE6C1E5BD4BF008A6971 /* Customer.m */,
 				EA23DE7B1E5BD66D008A6971 /* Coffee.h */,
@@ -218,6 +223,7 @@
 				EA23DE4C1E5BBF11008A6971 /* AppDelegate.m in Sources */,
 				EA23DE741E5BD4FF008A6971 /* GreenCard.m in Sources */,
 				EA23DE801E5BD66D008A6971 /* Order.m in Sources */,
+				EDA8139A1E5BDA8600F1C1B4 /* Starbucks.m in Sources */,
 				EA23DE711E5BD4EC008A6971 /* Card.m in Sources */,
 				EA23DE7F1E5BD66D008A6971 /* Coffee.m in Sources */,
 				EA23DE771E5BD50E008A6971 /* GoldCard.m in Sources */,
@@ -379,6 +385,7 @@
 				EA23DE5D1E5BBF11008A6971 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
