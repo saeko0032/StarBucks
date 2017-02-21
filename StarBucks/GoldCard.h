@@ -6,8 +6,11 @@
 //  Copyright © 2017 Saeko Fukui. All rights reserved.
 //
 
-#import "Card.h"
+#import "GreenCard.h"
 
-@interface GoldCard : Card
+@interface GoldCard : GreenCard
+
+@property(strong, nonatomic) NSDate* doubleStarDate;
+@property(strong, nonatomic) NSString* personName;
 
 @end

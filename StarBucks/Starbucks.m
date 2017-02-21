@@ -10,4 +10,9 @@
 
 @implementation Starbucks
 
+- (Barista*)callBarista {
+    Barista* barista = [[Barista alloc] init];
+    return barista;
+}
+
 @end

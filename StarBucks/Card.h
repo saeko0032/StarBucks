@@ -10,4 +10,9 @@
 
 @interface Card : NSObject
 
+@property (nonatomic) NSInteger storedMoney;
+@property (nonatomic) NSInteger stars;
+@property (strong, nonatomic) NSNumber* uniqueId;
+@property (strong, nonatomic) NSDate* expiredDate;
+
 @end

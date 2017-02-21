@@ -11,7 +11,10 @@
 @interface Customer : NSObject
 
 @property (strong, nonatomic) NSString* name;
-@property (strong, nonatomic) NSString* addIns;
-@property (strong, nonatomic) NSString* serveOptions;
+@property (strong, nonatomic) NSString* cardLevel;
+@property (strong, nonatomic) NSString* orderDate;
+
+- (void)order;
+- (void)pay;
 
 @end

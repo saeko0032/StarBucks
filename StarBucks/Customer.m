@@ -10,4 +10,8 @@
 
 @implementation Customer
 
+- (void)order {
+    ;
+}
+
 @end

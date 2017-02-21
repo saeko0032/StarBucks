@@ -8,6 +8,7 @@
 // kind of project manager class
 
 #import <Foundation/Foundation.h>
+#import "Barista.h"
 
 @interface Starbucks : NSObject
 
