@@ -1,0 +1,386 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA23DE491E5BBF11008A6971 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE481E5BBF11008A6971 /* main.m */; };
+		EA23DE4C1E5BBF11008A6971 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE4B1E5BBF11008A6971 /* AppDelegate.m */; };
+		EA23DE4F1E5BBF11008A6971 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE4E1E5BBF11008A6971 /* ViewController.m */; };
+		EA23DE521E5BBF11008A6971 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA23DE501E5BBF11008A6971 /* Main.storyboard */; };
+		EA23DE541E5BBF11008A6971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA23DE531E5BBF11008A6971 /* Assets.xcassets */; };
+		EA23DE571E5BBF11008A6971 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA23DE551E5BBF11008A6971 /* LaunchScreen.storyboard */; };
+		EA23DE661E5BD44E008A6971 /* Staff.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE651E5BD44E008A6971 /* Staff.m */; };
+		EA23DE691E5BD468008A6971 /* Barista.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE681E5BD468008A6971 /* Barista.m */; };
+		EA23DE6D1E5BD4BF008A6971 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE6C1E5BD4BF008A6971 /* Customer.m */; };
+		EA23DE711E5BD4EC008A6971 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE701E5BD4EC008A6971 /* Card.m */; };
+		EA23DE741E5BD4FF008A6971 /* GreenCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE731E5BD4FF008A6971 /* GreenCard.m */; };
+		EA23DE771E5BD50E008A6971 /* GoldCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE761E5BD50E008A6971 /* GoldCard.m */; };
+		EA23DE7A1E5BD549008A6971 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE791E5BD549008A6971 /* Store.m */; };
+		EA23DE7F1E5BD66D008A6971 /* Coffee.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE7C1E5BD66D008A6971 /* Coffee.m */; };
+		EA23DE801E5BD66D008A6971 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE7E1E5BD66D008A6971 /* Order.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EA23DE441E5BBF11008A6971 /* StarBucks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarBucks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA23DE481E5BBF11008A6971 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EA23DE4A1E5BBF11008A6971 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EA23DE4B1E5BBF11008A6971 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EA23DE4D1E5BBF11008A6971 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EA23DE4E1E5BBF11008A6971 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EA23DE511E5BBF11008A6971 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EA23DE531E5BBF11008A6971 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA23DE561E5BBF11008A6971 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EA23DE581E5BBF11008A6971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA23DE641E5BD44E008A6971 /* Staff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Staff.h; sourceTree = "<group>"; };
+		EA23DE651E5BD44E008A6971 /* Staff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Staff.m; sourceTree = "<group>"; };
+		EA23DE671E5BD468008A6971 /* Barista.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Barista.h; sourceTree = "<group>"; };
+		EA23DE681E5BD468008A6971 /* Barista.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Barista.m; sourceTree = "<group>"; };
+		EA23DE6B1E5BD4BF008A6971 /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
+		EA23DE6C1E5BD4BF008A6971 /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
+		EA23DE6F1E5BD4EC008A6971 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		EA23DE701E5BD4EC008A6971 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		EA23DE721E5BD4FF008A6971 /* GreenCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenCard.h; sourceTree = "<group>"; };
+		EA23DE731E5BD4FF008A6971 /* GreenCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenCard.m; sourceTree = "<group>"; };
+		EA23DE751E5BD50E008A6971 /* GoldCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoldCard.h; sourceTree = "<group>"; };
+		EA23DE761E5BD50E008A6971 /* GoldCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoldCard.m; sourceTree = "<group>"; };
+		EA23DE781E5BD549008A6971 /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
+		EA23DE791E5BD549008A6971 /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+		EA23DE7B1E5BD66D008A6971 /* Coffee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coffee.h; sourceTree = "<group>"; };
+		EA23DE7C1E5BD66D008A6971 /* Coffee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coffee.m; sourceTree = "<group>"; };
+		EA23DE7D1E5BD66D008A6971 /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		EA23DE7E1E5BD66D008A6971 /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA23DE411E5BBF11008A6971 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA23DE3B1E5BBF11008A6971 = {
+			isa = PBXGroup;
+			children = (
+				EA23DE461E5BBF11008A6971 /* StarBucks */,
+				EA23DE451E5BBF11008A6971 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA23DE451E5BBF11008A6971 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA23DE441E5BBF11008A6971 /* StarBucks.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA23DE461E5BBF11008A6971 /* StarBucks */ = {
+			isa = PBXGroup;
+			children = (
+				EA23DE6A1E5BD479008A6971 /* Staff */,
+				EA23DE6E1E5BD4DB008A6971 /* Card */,
+				EA23DE6B1E5BD4BF008A6971 /* Customer.h */,
+				EA23DE6C1E5BD4BF008A6971 /* Customer.m */,
+				EA23DE7B1E5BD66D008A6971 /* Coffee.h */,
+				EA23DE7C1E5BD66D008A6971 /* Coffee.m */,
+				EA23DE7D1E5BD66D008A6971 /* Order.h */,
+				EA23DE7E1E5BD66D008A6971 /* Order.m */,
+				EA23DE781E5BD549008A6971 /* Store.h */,
+				EA23DE791E5BD549008A6971 /* Store.m */,
+				EA23DE4A1E5BBF11008A6971 /* AppDelegate.h */,
+				EA23DE4B1E5BBF11008A6971 /* AppDelegate.m */,
+				EA23DE4D1E5BBF11008A6971 /* ViewController.h */,
+				EA23DE4E1E5BBF11008A6971 /* ViewController.m */,
+				EA23DE501E5BBF11008A6971 /* Main.storyboard */,
+				EA23DE531E5BBF11008A6971 /* Assets.xcassets */,
+				EA23DE551E5BBF11008A6971 /* LaunchScreen.storyboard */,
+				EA23DE581E5BBF11008A6971 /* Info.plist */,
+				EA23DE471E5BBF11008A6971 /* Supporting Files */,
+			);
+			path = StarBucks;
+			sourceTree = "<group>";
+		};
+		EA23DE471E5BBF11008A6971 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA23DE481E5BBF11008A6971 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA23DE6A1E5BD479008A6971 /* Staff */ = {
+			isa = PBXGroup;
+			children = (
+				EA23DE671E5BD468008A6971 /* Barista.h */,
+				EA23DE681E5BD468008A6971 /* Barista.m */,
+				EA23DE641E5BD44E008A6971 /* Staff.h */,
+				EA23DE651E5BD44E008A6971 /* Staff.m */,
+			);
+			name = Staff;
+			sourceTree = "<group>";
+		};
+		EA23DE6E1E5BD4DB008A6971 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				EA23DE6F1E5BD4EC008A6971 /* Card.h */,
+				EA23DE701E5BD4EC008A6971 /* Card.m */,
+				EA23DE721E5BD4FF008A6971 /* GreenCard.h */,
+				EA23DE731E5BD4FF008A6971 /* GreenCard.m */,
+				EA23DE751E5BD50E008A6971 /* GoldCard.h */,
+				EA23DE761E5BD50E008A6971 /* GoldCard.m */,
+			);
+			name = Card;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA23DE431E5BBF11008A6971 /* StarBucks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA23DE5B1E5BBF11008A6971 /* Build configuration list for PBXNativeTarget "StarBucks" */;
+			buildPhases = (
+				EA23DE401E5BBF11008A6971 /* Sources */,
+				EA23DE411E5BBF11008A6971 /* Frameworks */,
+				EA23DE421E5BBF11008A6971 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StarBucks;
+			productName = StarBucks;
+			productReference = EA23DE441E5BBF11008A6971 /* StarBucks.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA23DE3C1E5BBF11008A6971 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Saeko Fukui";
+				TargetAttributes = {
+					EA23DE431E5BBF11008A6971 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EA23DE3F1E5BBF11008A6971 /* Build configuration list for PBXProject "StarBucks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA23DE3B1E5BBF11008A6971;
+			productRefGroup = EA23DE451E5BBF11008A6971 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA23DE431E5BBF11008A6971 /* StarBucks */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA23DE421E5BBF11008A6971 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA23DE571E5BBF11008A6971 /* LaunchScreen.storyboard in Resources */,
+				EA23DE541E5BBF11008A6971 /* Assets.xcassets in Resources */,
+				EA23DE521E5BBF11008A6971 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA23DE401E5BBF11008A6971 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA23DE661E5BD44E008A6971 /* Staff.m in Sources */,
+				EA23DE4F1E5BBF11008A6971 /* ViewController.m in Sources */,
+				EA23DE691E5BD468008A6971 /* Barista.m in Sources */,
+				EA23DE7A1E5BD549008A6971 /* Store.m in Sources */,
+				EA23DE4C1E5BBF11008A6971 /* AppDelegate.m in Sources */,
+				EA23DE741E5BD4FF008A6971 /* GreenCard.m in Sources */,
+				EA23DE801E5BD66D008A6971 /* Order.m in Sources */,
+				EA23DE711E5BD4EC008A6971 /* Card.m in Sources */,
+				EA23DE7F1E5BD66D008A6971 /* Coffee.m in Sources */,
+				EA23DE771E5BD50E008A6971 /* GoldCard.m in Sources */,
+				EA23DE491E5BBF11008A6971 /* main.m in Sources */,
+				EA23DE6D1E5BD4BF008A6971 /* Customer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EA23DE501E5BBF11008A6971 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA23DE511E5BBF11008A6971 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EA23DE551E5BBF11008A6971 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA23DE561E5BBF11008A6971 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA23DE591E5BBF11008A6971 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EA23DE5A1E5BBF11008A6971 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA23DE5C1E5BBF11008A6971 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StarBucks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.saeko.StarBucks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EA23DE5D1E5BBF11008A6971 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StarBucks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.saeko.StarBucks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA23DE3F1E5BBF11008A6971 /* Build configuration list for PBXProject "StarBucks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA23DE591E5BBF11008A6971 /* Debug */,
+				EA23DE5A1E5BBF11008A6971 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA23DE5B1E5BBF11008A6971 /* Build configuration list for PBXNativeTarget "StarBucks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA23DE5C1E5BBF11008A6971 /* Debug */,
+				EA23DE5D1E5BBF11008A6971 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA23DE3C1E5BBF11008A6971 /* Project object */;
+}
