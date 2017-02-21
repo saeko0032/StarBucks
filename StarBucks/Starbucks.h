@@ -9,6 +9,8 @@
 
 #import <Foundation/Foundation.h>
 #import "Barista.h"
+#import "Customer.h"
+#import "Coffee.h"
 
 @interface Starbucks : NSObject
 

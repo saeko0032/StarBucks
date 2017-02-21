@@ -10,9 +10,34 @@
 
 @implementation Starbucks
 
-- (Barista*)callBarista {
-    Barista* barista = [[Barista alloc] init];
-    return barista;
+//- (Barista*)callBarista {
+//    Barista* barista = [[Barista alloc] init];
+//    return barista;
+//}
+
+    //TODO: change date from today to next year
+- (void)startWithThisFunction
+{
+    NSDate *today = [[NSDate alloc] init];
+    NSNumber *myUniqueID = [[NSNumber alloc] initWithInt:12345];
+    NSInteger currentStars = 10;
+    NSString *cardLevel;
+    if (0<currentStars && currentStars<300) {
+        cardLevel = @"green";
+    } else {
+        cardLevel = @"gold";
+    }
+    Card * card = [[Card alloc] initWithMyParameters:10 currentStars:currentStars uniquId:myUniqueID expiredDate:today cardLevel:cardLevel];
+    Customer *ai = [[Customer alloc] initWithMyInformationPrameters:@"AI" card:card];
+    
+ //   Coffee *coffee = [[Coffee alloc] initWithCoffeeParameters:@"tall" serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
+   
+    Coffee* coffee = [[Coffee alloc] initWithCoffeeParameters:@"Tall" addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
+    
+    
+//    [ai.order takeOrder:ammout 2 coffee];
+//    [ai order];
+//    [ai.order coffee];
 }
 
 @end
