@@ -15,4 +15,8 @@
 @property (strong, nonatomic) NSNumber* uniqueId;
 @property (strong, nonatomic) NSDate* expiredDate;
 
+- (id)initWithMyParameters:(NSInteger)storedMoney extraStars:(NSInteger)extraStars uniquId:(NSNumber*)uniquId expiredDate:(NSDate*)expiredDate;
+
+- (id)updateMyInfo:(NSInteger)storedMoney extraStars:(NSInteger)extraStars uniquId:(NSNumber*)uniquId expiredDate:(NSDate*)expiredDate;
+
 @end
