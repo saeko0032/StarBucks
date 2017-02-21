@@ -10,4 +10,8 @@
 
 @interface Customer : NSObject
 
+@property (strong, nonatomic) NSString* name;
+@property (strong, nonatomic) NSString* addIns;
+@property (strong, nonatomic) NSString* serveOptions;
+
 @end

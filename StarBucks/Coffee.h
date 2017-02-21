@@ -17,7 +17,6 @@
 @property (strong, nonatomic) NSString* flavours;
 @property (strong, nonatomic) NSString* toppings;
 
-
 - (id)initWithCoffeeParameters:(NSString *)size
                         addIns:(NSString*)addIns
                   serveOptions:(NSString*)serveOptions
