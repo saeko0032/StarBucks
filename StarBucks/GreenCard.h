@@ -10,4 +10,6 @@
 
 @interface GreenCard : Card
 
+@property (strong, nonatomic) NSDate* birthday;
+
 @end

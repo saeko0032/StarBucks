@@ -10,4 +10,8 @@
 
 @implementation Customer
 
+- (void)order {
+//    Coffee* coffee = [Coffee alloc] initWith
+}
+
 @end

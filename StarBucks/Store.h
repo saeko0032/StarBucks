@@ -10,4 +10,9 @@
 
 @interface Store : NSObject
 
+@property (strong, nonatomic) NSString* address;
+@property (strong, nonatomic) NSString* name;
+@property (strong, nonatomic) NSNumber* phoneNumber;
+@property (strong, nonatomic) NSArray<NSDate*> *openingHours;
+
 @end
