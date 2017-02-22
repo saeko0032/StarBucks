@@ -33,7 +33,7 @@
     Coffee* coffee = [[Coffee alloc] initWithCoffeeParameters:@"Tall" addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
     
     // 2 cups of coffee
-    [ai.order changeAmout:2];
+    ai.order.amount = 3; // no nedd to make method
     ai.order.coffee = coffee;
     
     Staff* staff = [[Staff alloc] initWithStaffInformation:@"AI" perHourWage:12 workingHours:nil workingDays:nil];
