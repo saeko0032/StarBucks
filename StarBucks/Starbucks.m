@@ -23,21 +23,21 @@
     NSInteger currentStars = 10;
     NSString *cardLevel;
     if (0<currentStars && currentStars<300) {
-        cardLevel = @"green";
+        cardLevel = @"Green";
     } else {
-        cardLevel = @"gold";
+        cardLevel = @"Gold";
     }
     Card * card = [[Card alloc] initWithMyParameters:10 currentStars:currentStars uniquId:myUniqueID expiredDate:today cardLevel:cardLevel];
     Customer *ai = [[Customer alloc] initWithMyInformationPrameters:@"AI" card:card];
     
- //   Coffee *coffee = [[Coffee alloc] initWithCoffeeParameters:@"tall" serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
-   
     Coffee* coffee = [[Coffee alloc] initWithCoffeeParameters:@"Tall" addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
     
+    // 2 cups of coffee
+    [ai.order changeAmout:2];
+    ai.order.coffee = coffee;
     
-//    [ai.order takeOrder:ammout 2 coffee];
-//    [ai order];
-//    [ai.order coffee];
+    Staff* staff = [[Staff alloc] initWithStaffInformation:@"AI" perHourWage:12 workingHours:nil workingDays:nil];
+    [staff takeOrder:ai];
 }
 
 @end

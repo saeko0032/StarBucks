@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Order.h"
 #import "Coffee.h"
+#import "Customer.h"
+#import "Barista.h"
 
 @interface Staff : NSObject
 
@@ -16,5 +18,9 @@
 @property (nonatomic) NSInteger perHourWage;
 @property (strong, nonatomic) NSArray<NSDate*> *workingHours;
 @property (strong, nonatomic) NSArray<NSDate*> *workingDays;
+
+- (void)takeOrder:(Customer*)customer;
+
+- (id)initWithStaffInformation:(NSString*)name perHourWage:(NSInteger)perHourWage workingHours:(NSArray<NSDate*>*)workingHours workingDays:(NSArray<NSDate*>*)workingDays;
 
 @end

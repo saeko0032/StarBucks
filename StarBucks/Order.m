@@ -10,4 +10,9 @@
 
 @implementation Order
 
+- (NSInteger)changeAmout:(NSInteger)amount {
+    self.amount = amount;
+    return self.amount;
+}
+
 @end

@@ -10,8 +10,14 @@
 
 @implementation Customer
 
-- (void)order {
-//    Coffee* coffee = [Coffee alloc] initWith
+- (id)initWithMyInformationPrameters:(NSString*) myName card:(Card*)currentCard {
+    self = [super init];
+    if(self) {
+        self.name = myName;
+        self.card = currentCard;
+    } else {
+        self = nil;
+    }
+    return self;
 }
-
 @end

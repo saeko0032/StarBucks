@@ -11,6 +11,7 @@
 #import "Barista.h"
 #import "Customer.h"
 #import "Coffee.h"
+#import "Staff.h"
 
 @interface Starbucks : NSObject
 
