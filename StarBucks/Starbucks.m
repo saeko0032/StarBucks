@@ -30,10 +30,15 @@
     Card * card = [[Card alloc] initWithMyParameters:10 currentStars:currentStars uniquId:myUniqueID expiredDate:today cardLevel:cardLevel];
     Customer *ai = [[Customer alloc] initWithMyInformationPrameters:@"AI" card:card];
     
- //   Coffee *coffee = [[Coffee alloc] initWithCoffeeParameters:@"tall" serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
+    Staff *staff1 = [[Staff alloc]initWithStaffParameters:@"staff1" perHourWage:nil workingHours:nil workingDays:nil];
    
     Coffee* coffee = [[Coffee alloc] initWithCoffeeParameters:@"Tall" addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
     
+    NSLog(@"\n============\n");
+    
+    [staff1 takeOrder:ai];
+    //NSInteger price = [ai order:amount];//need to change
+    //    [staff1 takeOrder:price card:card];
     
 //    [ai.order takeOrder:ammout 2 coffee];
 //    [ai order];

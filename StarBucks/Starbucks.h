@@ -8,10 +8,15 @@
 // kind of project manager class
 
 #import <Foundation/Foundation.h>
+#import "Staff.h"
 #import "Barista.h"
 #import "Customer.h"
 #import "Coffee.h"
+#import "Order.h"
+#import "Card.h"
 
 @interface Starbucks : NSObject
+
+- (void)startWithThisFunction;
 
 @end

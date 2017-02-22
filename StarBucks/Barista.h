@@ -8,6 +8,8 @@
 
 #import "Staff.h"
 
-@interface Barista : Staff
+@interface Barista : NSObject // : Staff
+
+//- (void) makeDrink;
 
 @end

@@ -10,8 +10,22 @@
 
 @implementation Customer
 
-- (void)order {
-//    Coffee* coffee = [Coffee alloc] initWith
+- (id)initWithMyInformationPrameters:(NSString*) myName card:(Card*)currentCard
+//- (id)initWithMyInformationPrameters:(NSString*) myName
+
+{
+    self = [super init];
+    if(self)
+    {
+        self.name = myName;
+        self.card = currentCard;
+    }
+    return self;
+}
+
+- (void)pay
+{
+    NSLog(@"\nPaid:)\n");
 }
 
 @end
