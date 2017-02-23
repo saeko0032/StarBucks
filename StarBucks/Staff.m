@@ -22,17 +22,17 @@
       return self;
 }
 
-- (void)takeOrder:(Customer*)customer {
-    Barista* barista1 = [[Barista alloc] initWithName:@"AI"];
-    [barista1 makeDrink:customer.order.coffee];
-    
-    NSInteger cost = [self caliculateCost:customer.order];
-    NSInteger storedeMoney= customer.card.storedMoney;
-    NSInteger restMoney = storedeMoney - cost;
-    if(restMoney) {
-        [customer.card updateMyInfo:restMoney extraStars:cost*2 uniquId:nil expiredDate:nil];
-    }
-}
+//- (void)takeOrder:(Customer*)customer {
+////    Barista* barista1 = [[Barista alloc] initWithName:@"AI"];
+////    [barista1 makeDrink:customer.order.coffee];
+//    
+//    NSInteger cost = [self caliculateCost:customer.order];
+//    NSInteger storedeMoney= customer.card.storedMoney;
+//    NSInteger restMoney = storedeMoney - cost;
+//    if(restMoney) {
+//        [customer.card updateMyInfo:restMoney extraStars:cost*2 uniquId:nil expiredDate:nil];
+//    }
+//}
 
 -(void)takeOrder:(Customer*)customer
 {

@@ -29,5 +29,5 @@
 - (void)takeOrder:(Customer*)customer;
 - (NSInteger)caluculatePrice:(Order*)order;
 - (void) makeDrink;
-- (void)takeOrder:(Customer*)customer;
+
 @end
