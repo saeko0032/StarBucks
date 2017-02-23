@@ -14,11 +14,10 @@
 @property (nonatomic) NSInteger amount;
 @property (strong,nonatomic) Coffee* coffee;
 
-<<<<<<< HEAD
+
 -(id)initWithOrderPrameters:(NSInteger)amount
                      coffee:(Coffee*)coffee;
 
 - (void)printMyOrderInfo;
-=======
->>>>>>> origin/master
+
 @end
