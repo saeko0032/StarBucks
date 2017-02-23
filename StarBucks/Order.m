@@ -10,6 +10,7 @@
 
 @implementation Order
 
+<<<<<<< HEAD
 -(id)initWithOrderPrameters:(NSInteger)amount coffee:(Coffee *)coffee
 {
     
@@ -29,4 +30,11 @@
     NSLog(@"Size: %@\n",self.coffee.size);
     NSLog(@"\n===================================\n");
 }
+=======
+- (NSInteger)changeAmout:(NSInteger)amount {
+    self.amount = amount;
+    return self.amount;
+}
+
+>>>>>>> origin/master
 @end

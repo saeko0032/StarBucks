@@ -10,8 +10,18 @@
 
 @implementation Barista
 
-//- (void) makeDrink
-//{
-//    NSLog(@"Your order is ready");
-//}
+// - (void)makeDrink:(Coffee*) coffee {
+//    printf("I made %s coffee",[coffee.size UTF8String]);
+// }
+
+// - (id)initWithName:(NSString *)name {
+//    self = [super init];
+    
+//    if(self) {
+//    } else {
+//        return nil;
+//    }
+//    return self;
+// }
+
 @end

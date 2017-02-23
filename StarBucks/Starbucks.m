@@ -33,14 +33,21 @@
     NSInteger currentStars = 301;
     NSString *cardLevel;
     if (0<currentStars && currentStars<300) {
-        cardLevel = @"green";
+        cardLevel = @"Green";
     } else {
-        cardLevel = @"gold";
+        cardLevel = @"Gold";
     }
+<<<<<<< HEAD
     Card * card = [[Card alloc] initWithMyParameters:10.50 currentStars:currentStars uniquId:myUniqueID expiredDate:myExpiredDate cardLevel:cardLevel];
     Customer * ai = [[Customer alloc] initWithMyInformationPrameters:@"AI" card:card];
     
     Staff * staff1 = [[Staff alloc]initWithStaffParameters:@"staff1" perHourWage:10 workingHours:nil workingDays:nil];
+=======
+    Card * card = [[Card alloc] initWithMyParameters:10 currentStars:currentStars uniquId:myUniqueID expiredDate:today cardLevel:cardLevel];
+    Customer *ai = [[Customer alloc] initWithMyInformationPrameters:@"AI" card:card];
+
+    Staff *staff1 = [[Staff alloc]initWithStaffParameters:@"staff1" perHourWage:nil workingHours:nil workingDays:nil];
+>>>>>>> origin/master
    
     Coffee * coffee = [[Coffee alloc] initWithCoffeeParameters:@"Tall" addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
     
@@ -59,10 +66,7 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     //NSInteger price = [ai order:amount];//need to change
     //    [staff1 takeOrder:price card:card];
-    
-//    [ai.order takeOrder:ammout 2 coffee];
-//    [ai order];
-//    [ai.order coffee];
+
 }
 
 @end
