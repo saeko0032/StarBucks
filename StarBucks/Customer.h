@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Card.h"
-#import "Coffee.h"
 #import "Order.h"
 
 @interface Customer : NSObject
@@ -16,11 +15,13 @@
 @property (strong, nonatomic) NSString* name;
 @property (strong, nonatomic) Card* card;
 @property (strong, nonatomic) Order* order;
-@property (nonatomic) NSInteger grade;
+//@property (nonatomic) NSInteger grade;
 
-//- (void)order;
-//- (void)pay;
+- (id)initWithMyInformationPrameters:(NSString*) myName
+                                card:(Card*)currentCard;
 
-- (id)initWithMyInformationPrameters:(NSString*) myName card:(Card*)currentCard;
+
+- (void)pay;
+
 
 @end

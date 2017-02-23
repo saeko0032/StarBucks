@@ -29,15 +29,17 @@
     }
     Card * card = [[Card alloc] initWithMyParameters:10 currentStars:currentStars uniquId:myUniqueID expiredDate:today cardLevel:cardLevel];
     Customer *ai = [[Customer alloc] initWithMyInformationPrameters:@"AI" card:card];
-    
+
+    Staff *staff1 = [[Staff alloc]initWithStaffParameters:@"staff1" perHourWage:nil workingHours:nil workingDays:nil];
+   
     Coffee* coffee = [[Coffee alloc] initWithCoffeeParameters:@"Tall" addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
     
-    // 2 cups of coffee
-    ai.order.amount = 3; // no nedd to make method
-    ai.order.coffee = coffee;
+    NSLog(@"\n============\n");
     
-    Staff* staff = [[Staff alloc] initWithStaffInformation:@"AI" perHourWage:12 workingHours:nil workingDays:nil];
-    [staff takeOrder:ai];
+    [staff1 takeOrder:ai];
+    //NSInteger price = [ai order:amount];//need to change
+    //    [staff1 takeOrder:price card:card];
+
 }
 
 @end

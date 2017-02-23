@@ -10,14 +10,21 @@
 
 @implementation Customer
 
-- (id)initWithMyInformationPrameters:(NSString*) myName card:(Card*)currentCard {
+- (id)initWithMyInformationPrameters:(NSString*) myName card:(Card*)currentCard
+
+{
     self = [super init];
-    if(self) {
+    if(self)
+    {
         self.name = myName;
         self.card = currentCard;
-    } else {
-        self = nil;
     }
     return self;
 }
+
+- (void)pay
+{
+    NSLog(@"\nPaid:)\n");
+}
+
 @end

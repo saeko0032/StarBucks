@@ -14,6 +14,4 @@
 @property (nonatomic) NSInteger amount;
 @property (strong,nonatomic) Coffee* coffee;
 
-- (NSInteger)changeAmout:(NSInteger)amount;
-
 @end

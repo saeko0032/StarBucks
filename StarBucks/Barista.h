@@ -9,10 +9,8 @@
 #import "Staff.h"
 #import "Coffee.h"
 
-@interface Barista : NSObject
+@interface Barista : NSObject // : Staff
 
 - (void)makeDrink:(Coffee*) coffee;
-
-- (id)initWithName:(NSString*)name;
 
 @end

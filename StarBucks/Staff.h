@@ -10,6 +10,8 @@
 #import "Order.h"
 #import "Coffee.h"
 #import "Customer.h"
+#import "Card.h"
+
 #import "Barista.h"
 
 @interface Staff : NSObject
@@ -19,8 +21,13 @@
 @property (strong, nonatomic) NSArray<NSDate*> *workingHours;
 @property (strong, nonatomic) NSArray<NSDate*> *workingDays;
 
+- (id)initWithStaffParameters:(NSString*)name
+                  perHourWage:(NSInteger)perHourWage
+                  workingHours:(NSArray*)workingHours
+                   workingDays:(NSArray*)workingDays;
+
 - (void)takeOrder:(Customer*)customer;
-
-- (id)initWithStaffInformation:(NSString*)name perHourWage:(NSInteger)perHourWage workingHours:(NSArray<NSDate*>*)workingHours workingDays:(NSArray<NSDate*>*)workingDays;
-
+- (NSInteger)caluculatePrice:(Order*)order;
+- (void) makeDrink;
+- (void)takeOrder:(Customer*)customer;
 @end
