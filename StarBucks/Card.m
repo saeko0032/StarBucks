@@ -10,7 +10,8 @@
 
 @implementation Card
 
-- (id)initWithMyParameters:(NSInteger)storedMoney currentStars:(NSInteger)currentStars uniquId:(NSNumber*)uniquId expiredDate:(NSDate*)expiredDate cardLevel:(NSString*)cardLevel
+
+- (id)initWithMyParameters:(float)storedMoney currentStars:(NSInteger)currentStars uniquId:(NSNumber*)uniquId expiredDate:(NSDate*)expiredDate cardLevel:(NSString*)cardLevel
 {
     self = [super init];
     if(self)
@@ -24,7 +25,7 @@
     return self;
 }
 
-- (void)updateMyInfo:(NSInteger)newStoredMoney addStars:(NSInteger)addStars expiredDate:(NSDate *)expiredDate
+- (void)updateMyInfo:(float)newStoredMoney addStars:(NSInteger)addStars expiredDate:(NSDate *)expiredDate
 {
     
     NSString *cardLevel;
@@ -41,14 +42,17 @@
     [self printMyCardInfo];
 }
 
+//Create the dateformatter object and set the required date format
+
+
 - (void)printMyCardInfo
 {
     NSLog(@"\n===================================\n");
     NSLog(@"\nYour card has been updatad.\n");
     NSLog(@"ID: %@\n",self.uniqueId);
-    NSLog(@"Money: %ld\n",(long)self.storedMoney);
+    NSLog(@"Money: %.2f\n",self.storedMoney);
     NSLog(@"Star: %ld\n",(long)self.currentStars);
-    NSLog(@"expiredDate: %ld\n",(long)self.expiredDate);
+    NSLog(@"expiredDate: %@\n",self.expiredDate);
     NSLog(@"CardLevel: %@\n",self.cardLevel);
     NSLog(@"\n===================================\n");
 }
