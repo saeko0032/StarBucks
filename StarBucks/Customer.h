@@ -17,7 +17,7 @@
 @property (strong, nonatomic) Order* order;
 //@property (nonatomic) NSInteger grade;
 
-- (id)initWithMyInformationPrameters:(NSString*) myName
+- (id)initWithMyInformationPrameters:(NSString*)myName
                                 card:(Card*)currentCard;
 
 

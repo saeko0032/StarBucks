@@ -10,19 +10,19 @@
 
 @interface Card : NSObject
 
-@property (nonatomic) NSInteger storedMoney;
+@property (nonatomic) float storedMoney;
 @property (nonatomic) NSInteger currentStars;
 @property (strong, nonatomic) NSNumber* uniqueId;
 @property (strong, nonatomic) NSDate* expiredDate;
 @property (strong, nonatomic) NSString* cardLevel;
 
-- (id)initWithMyParameters:(NSInteger)storedMoney
+- (id)initWithMyParameters:(float)storedMoney
               currentStars:(NSInteger)currentStars
                    uniquId:(NSNumber*)uniquId
                expiredDate:(NSDate*)expiredDate
                  cardLevel:(NSString*)cardLevel;
 
-- (void)updateMyInfo:(NSInteger)newStoredMoney addStars:(NSInteger)addStars expiredDate:(NSDate*)expiredDate;
+- (void)updateMyInfo:(float)newStoredMoney addStars:(NSInteger)addStars expiredDate:(NSDate*)expiredDate;
 - (void)printMyCardInfo;
 
 @end

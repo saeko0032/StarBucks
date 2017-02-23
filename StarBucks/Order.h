@@ -14,5 +14,8 @@
 @property (nonatomic) NSInteger amount;
 @property (strong,nonatomic) Coffee* coffee;
 
+-(id)initWithOrderPrameters:(NSInteger)amount
+                     coffee:(Coffee*)coffee;
 
+- (void)printMyOrderInfo;
 @end

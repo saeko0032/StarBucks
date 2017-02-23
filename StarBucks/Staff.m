@@ -42,11 +42,11 @@
 - (NSInteger)caluculatePrice:(Order*)order//TODO: need to culculate DONE
 {
     NSInteger price = 0;
-    if([order.coffee.size  isEqual: @"Tall"])
+    if([order.coffee.size isEqualToString: @"Tall"])
     {
         price = order.amount * 2;
     }
-    if([order.coffee.size  isEqual: @"Large"])
+    if([order.coffee.size isEqualToString: @"Large"])
     {
         price = order.amount * 4;
     }
