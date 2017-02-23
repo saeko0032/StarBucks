@@ -11,7 +11,6 @@
 @implementation Customer
 
 - (id)initWithMyInformationPrameters:(NSString*) myName card:(Card*)currentCard
-//- (id)initWithMyInformationPrameters:(NSString*) myName
 
 {
     self = [super init];

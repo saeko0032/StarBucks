@@ -7,9 +7,10 @@
 //
 
 #import "Staff.h"
+#import "Coffee.h"
 
 @interface Barista : NSObject // : Staff
 
-//- (void) makeDrink;
+- (void)makeDrink:(Coffee*) coffee;
 
 @end

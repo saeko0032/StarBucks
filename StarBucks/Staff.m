@@ -19,7 +19,19 @@
         self.workingHours = workingHours;
         self. workingDays = workingDays;
     }
-    return self;
+      return self;
+}
+
+- (void)takeOrder:(Customer*)customer {
+    Barista* barista1 = [[Barista alloc] initWithName:@"AI"];
+    [barista1 makeDrink:customer.order.coffee];
+    
+    NSInteger cost = [self caliculateCost:customer.order];
+    NSInteger storedeMoney= customer.card.storedMoney;
+    NSInteger restMoney = storedeMoney - cost;
+    if(restMoney) {
+        [customer.card updateMyInfo:restMoney extraStars:cost*2 uniquId:nil expiredDate:nil];
+    }
 }
 
 -(void)takeOrder:(Customer*)customer
@@ -71,5 +83,6 @@
 //[comps setSecond:5];
 //NSDate *date = [calendar dateFromComponents:comps];
 //NSLog(@"date: %@", date); // => date: 2010-01-02 03:04:05 +0900
+
 
 @end

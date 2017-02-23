@@ -11,6 +11,7 @@
 #import "Coffee.h"
 #import "Customer.h"
 #import "Card.h"
+
 #import "Barista.h"
 
 @interface Staff : NSObject
@@ -25,9 +26,8 @@
                   workingHours:(NSArray*)workingHours
                    workingDays:(NSArray*)workingDays;
 
-// DONE
-// -(void)takeOrder:(NSInteger)price card:(Card*)card;
 - (void)takeOrder:(Customer*)customer;
 - (NSInteger)caluculatePrice:(Order*)order;
 - (void) makeDrink;
+- (void)takeOrder:(Customer*)customer;
 @end
