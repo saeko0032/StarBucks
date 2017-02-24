@@ -2,17 +2,13 @@
 //  Staff.h
 //  StarBucks
 //
-//  Created by saeko fukui on 2017-02-20.
+//  Created by AiYamamoto on 2017-02-23.
 //  Copyright © 2017 Saeko Fukui. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "Order.h"
-#import "Coffee.h"
 #import "Customer.h"
-#import "Card.h"
-
-#import "Barista.h"
 
 @interface Staff : NSObject
 
@@ -23,11 +19,12 @@
 
 - (id)initWithStaffParameters:(NSString*)name
                   perHourWage:(NSInteger)perHourWage
-                  workingHours:(NSArray*)workingHours
-                   workingDays:(NSArray*)workingDays;
+                 workingHours:(NSArray*)workingHours
+                  workingDays:(NSArray*)workingDays;
 
 - (void)takeOrder:(Customer*)customer;
-- (NSInteger)caluculatePrice:(Order*)order;
+- (NSInteger)calculatePrice:(Order*)order;
 - (void) makeDrink;
-- (void)takeOrder:(Customer*)customer;
+
+
 @end
