@@ -9,7 +9,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Staff.h"
-#import "Barista.h"
 #import "Customer.h"
 #import "Coffee.h"
 #import "Order.h"

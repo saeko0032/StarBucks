@@ -34,8 +34,9 @@
 - (IBAction)segmentValueChanged:(id)sender {
 
     UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
-        NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
-        
+    NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
+
+
         if (selectedSegment == 0) {
             // short
             self.size = @"Short";
@@ -112,56 +113,41 @@
     NSDate *myExpiredDate = [calendar dateByAddingComponents:date toDate:today options:0];
     
     NSLog(@"Start!!!!!\n");
-    //NSDate *today = [[NSDate alloc] init];
     NSNumber *myUniqueID = [[NSNumber alloc] initWithInt:12345];
-    NSInteger currentStars = 301;
+    NSInteger currentStars = self.starLabel.text.integerValue;
     NSString *cardLevel;
-    if (0<currentStars && currentStars<300) {
+    if (0 < currentStars && currentStars < 300) {
         cardLevel = @"Green";
     } else {
         cardLevel = @"Gold";
     }
 
-    Card * card = [[Card alloc] initWithMyParameters:self.moneyLabel.text.floatValue currentStars:self.starLabel.text.integerValue uniquId:myUniqueID expiredDate:myExpiredDate cardLevel:cardLevel];
-    Customer * ai = [[Customer alloc] initWithMyInformationPrameters:@"AI" card:card];
+
+    Card * card = [[Card alloc] initWithMyParameters:self.moneyLabel.text.floatValue currentStars:currentStars uniquId:myUniqueID expiredDate:myExpiredDate cardLevel:cardLevel];
+    Customer * customer = [[Customer alloc] initWithMyInformationPrameters:@"AI" card:card];
     
-    Staff * staff1 = [[Staff alloc]initWithStaffParameters:@"staff1" perHourWage:10 workingHours:nil workingDays:nil];
-    
+    Staff * staff = [[Staff alloc]initWithStaffParameters:@"staff1" perHourWage:10 workingHours:nil workingDays:nil];
     Coffee * coffee = [[Coffee alloc] initWithCoffeeParameters:self.size addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
     
     Order * order = [[Order alloc] initWithOrderPrameters:self.amount coffee:coffee];
-    // SF20170222
-    ai.order = order;
-    ai.order.coffee = coffee;
-    ai.card = card;
+  
+    customer.order = order;
+    customer.order.coffee = coffee;
+    customer.card = card;
+    
+    if(customer.order.coffee.size == nil)
+    {
+        order.coffee.size = @"Tall";
+    }
     
     [order printMyOrderInfo];
     [card printMyCardInfo];
-    [staff1 takeOrder:ai];
+    [staff takeOrder:customer];
+
     
-    //Create the dateformatter object and set the required date format
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-//
-//    
-//    Card * card = [[Card alloc] initWithMyParameters:self.moneyLabel.text.floatValue currentStars:self.starLabel.text.integerValue uniquId:myUniqueID expiredDate:today cardLevel:nil];
-//    Customer *ai = [[Customer alloc] initWithMyInformationPrameters:@"AI" card:card];
-//    
-//    Staff *staff1 = [[Staff alloc]initWithStaffParameters:@"staff1" perHourWage:12 workingHours:nil workingDays:nil];
-//    
-//    if([self.size isEqual:nil]) {
-//        self.size = @"Tall";
-//    }
-//    
-//    Coffee* coffee = [[Coffee alloc] initWithCoffeeParameters:self.size addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
-//    
-//    
-//    
-//    NSLog(@"\n============\n");
-    
-    [staff1 takeOrder:ai];
-    self.moneyLabel.text = [NSString stringWithFormat:@"%.2f", ai.card.storedMoney];
-    self.starLabel.text = [NSString stringWithFormat:@"%ld", ai.card.currentStars];
+    [staff takeOrder:customer];
+    self.moneyLabel.text = [NSString stringWithFormat:@"%.2f", customer.card.storedMoney];
+    self.starLabel.text = [NSString stringWithFormat:@"%ld", customer.card.currentStars];
 }
 
 @end
