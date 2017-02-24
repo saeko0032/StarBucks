@@ -12,7 +12,6 @@
 
 -(id)initWithOrderPrameters:(NSInteger)amount coffee:(Coffee *)coffee
 {
-    
     self = [super init];
     if (self) {
         self.amount = amount;

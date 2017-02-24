@@ -10,19 +10,8 @@
 
 @implementation Starbucks
 
-//- (Barista*)callBarista {
-//    Barista* barista = [[Barista alloc] init];
-//    return barista;
-//}
-
-    //TODO: change date from today to next year
-
 - (void)startWithThisFunction
 {
-    //calculate the date after 1 year
- 
-      //NSInteger price = [ai order:amount];//need to change
-    //    [staff1 takeOrder:price card:card];
 
 }
 

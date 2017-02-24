@@ -11,16 +11,18 @@
 #import "Customer.h"
 #import "Staff.h"
 #import "Coffee.h"
+#import "Barista.h"
 
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *orderButton;
+@property (weak, nonatomic) IBOutlet UITextField *reloadMoney;
+@property (weak, nonatomic) IBOutlet UIButton *reloadButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sizeSegment;
 @property (weak, nonatomic) IBOutlet UIPickerView *amountPicker;
 @property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *starLabel;
 @property (strong,nonatomic) NSString* size;
 @property (nonatomic) NSInteger amount;
-
 @end
 

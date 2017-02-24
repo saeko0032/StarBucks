@@ -15,13 +15,11 @@
 @property (strong, nonatomic) NSString* name;
 @property (strong, nonatomic) Card* card;
 @property (strong, nonatomic) Order* order;
-//@property (nonatomic) NSInteger grade;
 
 - (id)initWithMyInformationPrameters:(NSString*)myName
                                 card:(Card*)currentCard;
 
-
 - (void)pay;
-
+- (void)reloadStoredMoney:(float)reloadMoney;
 
 @end

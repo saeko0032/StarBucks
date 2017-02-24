@@ -10,6 +10,9 @@
 #import "Order.h"
 #import "Customer.h"
 
+
+@class Barista;
+
 @interface Staff : NSObject
 
 @property (strong, nonatomic) NSString* name;

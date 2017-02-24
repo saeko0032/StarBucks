@@ -12,7 +12,11 @@
 
 @property (strong, nonatomic) NSString* address;
 @property (strong, nonatomic) NSString* name;
-@property (strong, nonatomic) NSNumber* phoneNumber;
-@property (strong, nonatomic) NSArray<NSDate*> *openingHours;
+@property (strong, nonatomic) NSString* phoneNumber;
+@property (strong, nonatomic) NSArray<NSDate*>* openingHours;
 
+- (id) initWithStoreParameters:(NSString*)adsress
+                          name:(NSString*)name
+                   phoneNumber:(NSString*)phoneNumber
+                  openingHours:(NSArray<NSDate*>*)openingHours;
 @end

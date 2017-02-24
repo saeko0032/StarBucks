@@ -23,6 +23,7 @@
                  cardLevel:(NSString*)cardLevel;
 
 - (void)updateMyInfo:(float)newStoredMoney addStars:(NSInteger)addStars expiredDate:(NSDate*)expiredDate;
+
 - (void)printMyCardInfo;
 
 @end
