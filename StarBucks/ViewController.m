@@ -59,6 +59,11 @@
 {
     UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
     NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
         if (selectedSegment == 0) {
             // short
             self.size = @"Short";
@@ -126,6 +131,7 @@
 
 - (IBAction)getOrderFromButton:(id)sender {
     
+<<<<<<< HEAD
     
     Staff * staff = [[Staff alloc]initWithStaffParameters:@"staff1" perHourWage:10 workingHours:nil workingDays:nil];
 
@@ -136,6 +142,35 @@
     self.customer.order = order;
     self.customer.order.coffee = coffee;
     self.customer.card = self.card;
+=======
+    NSLog(@"Start!!!!!\n");
+    NSNumber *myUniqueID = [[NSNumber alloc] initWithInt:12345];
+    NSInteger currentStars = self.starLabel.text.integerValue;
+    NSString *cardLevel;
+    if (0 < currentStars && currentStars < 300) {
+        cardLevel = @"Green";
+    } else {
+        cardLevel = @"Gold";
+    }
+
+
+    Card * card = [[Card alloc] initWithMyParameters:self.moneyLabel.text.floatValue currentStars:currentStars uniquId:myUniqueID expiredDate:myExpiredDate cardLevel:cardLevel];
+    Customer * customer = [[Customer alloc] initWithMyInformationPrameters:@"AI" card:card];
+    
+    Staff * staff = [[Staff alloc]initWithStaffParameters:@"staff1" perHourWage:10 workingHours:nil workingDays:nil];
+    Coffee * coffee = [[Coffee alloc] initWithCoffeeParameters:self.size addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
+    
+    Order * order = [[Order alloc] initWithOrderPrameters:self.amount coffee:coffee];
+  
+    customer.order = order;
+    customer.order.coffee = coffee;
+    customer.card = card;
+    
+    if(customer.order.coffee.size == nil)
+    {
+        order.coffee.size = @"Tall";
+    }
+>>>>>>> origin/master
     
     [order printMyOrderInfo];
     [self.card printMyCardInfo];

@@ -22,6 +22,7 @@
 		EA23DE7A1E5BD549008A6971 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE791E5BD549008A6971 /* Store.m */; };
 		EA23DE7F1E5BD66D008A6971 /* Coffee.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE7C1E5BD66D008A6971 /* Coffee.m */; };
 		EA23DE801E5BD66D008A6971 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE7E1E5BD66D008A6971 /* Order.m */; };
+		ED22B6C11E5E82E30030B71C /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED22B6C01E5E82E30030B71C /* test.jpg */; };
 		EDA8139A1E5BDA8600F1C1B4 /* Starbucks.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA813991E5BDA8600F1C1B4 /* Starbucks.m */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		EA23DE7C1E5BD66D008A6971 /* Coffee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coffee.m; sourceTree = "<group>"; };
 		EA23DE7D1E5BD66D008A6971 /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		EA23DE7E1E5BD66D008A6971 /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
+		ED22B6C01E5E82E30030B71C /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		EDA813981E5BDA8600F1C1B4 /* Starbucks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Starbucks.h; sourceTree = "<group>"; };
 		EDA813991E5BDA8600F1C1B4 /* Starbucks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Starbucks.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 				EA23DE4E1E5BBF11008A6971 /* ViewController.m */,
 				EA23DE501E5BBF11008A6971 /* Main.storyboard */,
 				EA23DE531E5BBF11008A6971 /* Assets.xcassets */,
+				ED22B6C01E5E82E30030B71C /* test.jpg */,
 				EA23DE551E5BBF11008A6971 /* LaunchScreen.storyboard */,
 				EA23DE581E5BBF11008A6971 /* Info.plist */,
 				EA23DE471E5BBF11008A6971 /* Supporting Files */,
@@ -206,6 +209,7 @@
 				EA23DE571E5BBF11008A6971 /* LaunchScreen.storyboard in Resources */,
 				EA23DE541E5BBF11008A6971 /* Assets.xcassets in Resources */,
 				EA23DE521E5BBF11008A6971 /* Main.storyboard in Resources */,
+				ED22B6C11E5E82E30030B71C /* test.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
