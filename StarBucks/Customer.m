@@ -11,7 +11,6 @@
 @implementation Customer
 
 - (id)initWithMyInformationPrameters:(NSString*) myName card:(Card*)currentCard
-
 {
     self = [super init];
     if(self)
@@ -24,7 +23,12 @@
 
 - (void)pay
 {
-    NSLog(@"\nPaid:)\n");
+    NSLog(@"Paid:)\n");
+}
+
+- (void)reloadStoredMoney:(float)reloadMoney
+{
+    self.card.storedMoney = self.card.storedMoney + reloadMoney;
 }
 
 @end

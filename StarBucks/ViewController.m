@@ -10,17 +10,41 @@
 
 @interface ViewController ()
 
+@property (strong, nonatomic) Customer* customer;
+@property (strong, nonatomic) Card* card;
+
 @end
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
-
+    self.size = @"Tall";
+    
+    NSDate *today = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *date = [[NSDateComponents alloc]init];
+    date.year = 1;
+    NSDate *myExpiredDate = [calendar dateByAddingComponents:date toDate:today options:0];
+    
+    NSNumber *myUniqueID = [[NSNumber alloc] initWithInt:12345];
+    NSInteger currentStars = self.starLabel.text.integerValue;
+    NSString *cardLevel;
+    if (0 < currentStars && currentStars < 300) {
+        cardLevel = @"Green";
+    } else {
+        cardLevel = @"Gold";
+    }
+    
+    Card * card = [[Card alloc] initWithMyParameters:self.moneyLabel.text.floatValue currentStars:currentStars uniquId:myUniqueID expiredDate:myExpiredDate cardLevel:cardLevel];
+        
+    Customer * customer = [[Customer alloc] initWithMyInformationPrameters:@"AI" card:card];
+        self.customer = customer;
+        self.card = card;
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -31,11 +55,10 @@
     return 1;
 }
 
-- (IBAction)segmentValueChanged:(id)sender {
-
+- (IBAction)segmentValueChanged:(id)sender
+{
     UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
     NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
-
         if (selectedSegment == 0) {
             // short
             self.size = @"Short";
@@ -47,12 +70,10 @@
             // grande
             self.size = @"Grande";
         }
-
 }
 
 
 - (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
-    
     return 10;
 }
 
@@ -104,50 +125,33 @@
 }
 
 - (IBAction)getOrderFromButton:(id)sender {
-    NSDate *today = [NSDate date];
-    NSCalendar *calendar = [NSCalendar currentCalendar];
     
-    NSDateComponents *date = [[NSDateComponents alloc]init];
-    date.year = 1;
-    NSDate *myExpiredDate = [calendar dateByAddingComponents:date toDate:today options:0];
-    
-    NSLog(@"Start!!!!!\n");
-    NSNumber *myUniqueID = [[NSNumber alloc] initWithInt:12345];
-    NSInteger currentStars = self.starLabel.text.integerValue;
-    NSString *cardLevel;
-    if (0 < currentStars && currentStars < 300) {
-        cardLevel = @"Green";
-    } else {
-        cardLevel = @"Gold";
-    }
-
-    Card * card = [[Card alloc] initWithMyParameters:self.moneyLabel.text.floatValue currentStars:currentStars uniquId:myUniqueID expiredDate:myExpiredDate cardLevel:cardLevel];
-    Customer * customer = [[Customer alloc] initWithMyInformationPrameters:@"AI" card:card];
     
     Staff * staff = [[Staff alloc]initWithStaffParameters:@"staff1" perHourWage:10 workingHours:nil workingDays:nil];
-    
-    
+
     Coffee * coffee = [[Coffee alloc] initWithCoffeeParameters:self.size addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
     
     Order * order = [[Order alloc] initWithOrderPrameters:self.amount coffee:coffee];
     
-    customer.order = order;
-    customer.order.coffee = coffee;
-    customer.card = card;
-    
-    if(customer.order.coffee.size == nil)
-    {
-        order.coffee.size = @"Tall";
-    }
+    self.customer.order = order;
+    self.customer.order.coffee = coffee;
+    self.customer.card = self.card;
     
     [order printMyOrderInfo];
-    [card printMyCardInfo];
-    [staff takeOrder:customer];
-
+    [self.card printMyCardInfo];
+    [staff takeOrder:self.customer];
     
-    [staff takeOrder:customer];
-    self.moneyLabel.text = [NSString stringWithFormat:@"%.2f", customer.card.storedMoney];
-    self.starLabel.text = [NSString stringWithFormat:@"%ld", customer.card.currentStars];
+    self.moneyLabel.text = [NSString stringWithFormat:@"%.2f", self.customer.card.storedMoney];
+    self.starLabel.text = [NSString stringWithFormat:@"%ld", self.customer.card.currentStars];
+}
+
+- (IBAction)reloadMoneyFromButton:(id)sender {
+    float reloadMoney = self.reloadMoney.text.floatValue;
+    [self.customer reloadStoredMoney:reloadMoney];
+    self.moneyLabel.text = [NSString stringWithFormat:@"%.2f", self.customer.card.storedMoney];
+    self.starLabel.text = [NSString stringWithFormat:@"%ld", self.customer.card.currentStars];
+    self.reloadMoney.text = @"";
+    NSLog(@"Reloaded!\n");
 }
 
 @end

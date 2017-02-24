@@ -10,6 +10,9 @@
 #import "Order.h"
 #import "Customer.h"
 
+
+@class Barista;
+
 @interface Staff : NSObject
 
 @property (strong, nonatomic) NSString* name;
@@ -25,6 +28,5 @@
 - (void)takeOrder:(Customer*)customer;
 - (NSInteger)calculatePrice:(Order*)order;
 - (void) makeDrink;
-
 
 @end

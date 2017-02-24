@@ -10,4 +10,16 @@
 
 @implementation Store
 
+- (id) initWithStoreParameters:(NSString*)adsress name:(NSString*)name phoneNumber:(NSString*)phoneNumber openingHours:(NSArray<NSDate*>*)openingHours
+{
+    self = [super init];
+    if(self)
+    {
+        self.name = name;
+        self.phoneNumber = phoneNumber;
+        self.openingHours = openingHours;
+    }
+    return self;
+}
+
 @end

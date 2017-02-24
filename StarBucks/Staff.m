@@ -8,6 +8,8 @@
 
 #import "Staff.h"
 
+#import "Barista.h"
+
 @implementation Staff
 
 - (id)initWithStaffParameters:(NSString*)name perHourWage:(NSInteger)perHourWage workingHours:(NSArray*)workingHours workingDays:(NSArray*)workingDays
@@ -25,10 +27,12 @@
 
 -(void)takeOrder:(Customer*)customer
 {
+    Barista * barista = [[Barista alloc]initWithStaffParameters:@"barista1" perHourWage:20 workingHours:nil workingDays:nil];
+    
     NSInteger price = [self calculatePrice:customer.order];
     if(price < customer.card.storedMoney)
     {
-        [self makeDrink];
+        [barista makeDrink];
         NSInteger currentStoredMoney = customer.card.storedMoney - price;
         NSInteger currentAddstars = price;
         [customer.card updateMyInfo:currentStoredMoney addStars:currentAddstars expiredDate:[NSDate date]];
