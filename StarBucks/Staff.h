@@ -26,5 +26,4 @@
 - (NSInteger)calculatePrice:(Order*)order;
 - (void) makeDrink;
 
-
 @end

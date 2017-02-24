@@ -36,6 +36,7 @@
     UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
     NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
 
+
         if (selectedSegment == 0) {
             // short
             self.size = @"Short";
@@ -121,16 +122,15 @@
         cardLevel = @"Gold";
     }
 
+
     Card * card = [[Card alloc] initWithMyParameters:self.moneyLabel.text.floatValue currentStars:currentStars uniquId:myUniqueID expiredDate:myExpiredDate cardLevel:cardLevel];
     Customer * customer = [[Customer alloc] initWithMyInformationPrameters:@"AI" card:card];
     
     Staff * staff = [[Staff alloc]initWithStaffParameters:@"staff1" perHourWage:10 workingHours:nil workingDays:nil];
-    
-    
     Coffee * coffee = [[Coffee alloc] initWithCoffeeParameters:self.size addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
     
     Order * order = [[Order alloc] initWithOrderPrameters:self.amount coffee:coffee];
-    
+  
     customer.order = order;
     customer.order.coffee = coffee;
     customer.card = card;
