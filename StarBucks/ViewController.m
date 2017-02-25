@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) Customer* customer;
 @property (strong, nonatomic) Card* card;
+@property (strong, nonatomic) NSDate *localDate;
+@property (strong, nonatomic) Store *storeA;
+@property (strong, nonatomic) Store *storeB;
 
 @end
 
@@ -22,13 +25,34 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.size = @"Tall";
+
+    self.localDate = [NSDate dateWithTimeIntervalSinceNow:[[NSTimeZone systemTimeZone] secondsFromGMT]];;
     
-    NSDate *today = [NSDate date];
-    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
     
+    //OpeningTime 12am
+    NSDateComponents *comOpen = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:self.localDate];
+    
+    [comOpen setHour:4];
+    
+    NSDate * openingTime = [calendar dateFromComponents:comOpen];
+    
+    //ClosingTime 10pm
+    NSDateComponents *comClose = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:self.localDate];
+    
+    [comClose setHour:14];
+    
+    NSDate * closingTime = [calendar dateFromComponents:comClose];
+
     NSDateComponents *date = [[NSDateComponents alloc]init];
     date.year = 1;
-    NSDate *myExpiredDate = [calendar dateByAddingComponents:date toDate:today options:0];
+    NSDate *myExpiredDate = [calendar dateByAddingComponents:date toDate:self.localDate options:0];
+    
+    Store * storeA = [[Store alloc] initWithStoreParameters:@"storeA" address:nil phoneNumber:nil openingTime:openingTime closingTime:closingTime];
+    self.storeA = storeA;
+    
+    //NSLog(@"time1:%@",today12am);
+    //NSLog(@"time2:%@",today10pm);
     
     NSNumber *myUniqueID = [[NSNumber alloc] initWithInt:12345];
     NSInteger currentStars = self.starLabel.text.integerValue;
@@ -59,11 +83,6 @@
 {
     UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
     NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
-<<<<<<< HEAD
-=======
-
-
->>>>>>> origin/master
         if (selectedSegment == 0) {
             // short
             self.size = @"Short";
@@ -131,7 +150,6 @@
 
 - (IBAction)getOrderFromButton:(id)sender {
     
-<<<<<<< HEAD
     
     Staff * staff = [[Staff alloc]initWithStaffParameters:@"staff1" perHourWage:10 workingHours:nil workingDays:nil];
 
@@ -142,35 +160,6 @@
     self.customer.order = order;
     self.customer.order.coffee = coffee;
     self.customer.card = self.card;
-=======
-    NSLog(@"Start!!!!!\n");
-    NSNumber *myUniqueID = [[NSNumber alloc] initWithInt:12345];
-    NSInteger currentStars = self.starLabel.text.integerValue;
-    NSString *cardLevel;
-    if (0 < currentStars && currentStars < 300) {
-        cardLevel = @"Green";
-    } else {
-        cardLevel = @"Gold";
-    }
-
-
-    Card * card = [[Card alloc] initWithMyParameters:self.moneyLabel.text.floatValue currentStars:currentStars uniquId:myUniqueID expiredDate:myExpiredDate cardLevel:cardLevel];
-    Customer * customer = [[Customer alloc] initWithMyInformationPrameters:@"AI" card:card];
-    
-    Staff * staff = [[Staff alloc]initWithStaffParameters:@"staff1" perHourWage:10 workingHours:nil workingDays:nil];
-    Coffee * coffee = [[Coffee alloc] initWithCoffeeParameters:self.size addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
-    
-    Order * order = [[Order alloc] initWithOrderPrameters:self.amount coffee:coffee];
-  
-    customer.order = order;
-    customer.order.coffee = coffee;
-    customer.card = card;
-    
-    if(customer.order.coffee.size == nil)
-    {
-        order.coffee.size = @"Tall";
-    }
->>>>>>> origin/master
     
     [order printMyOrderInfo];
     [self.card printMyCardInfo];

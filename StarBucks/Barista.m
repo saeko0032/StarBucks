@@ -13,6 +13,6 @@
 
 - (void)makeDrink
 {
-    
+    NSLog(@"Your drink is ready!!!");
 }
 @end

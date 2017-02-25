@@ -8,7 +8,6 @@
 
 #import "Staff.h"
 
-
 @interface Barista : Staff
 
 - (void)makeDrink;

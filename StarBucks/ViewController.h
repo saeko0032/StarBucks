@@ -12,6 +12,7 @@
 #import "Staff.h"
 #import "Coffee.h"
 #import "Barista.h"
+#import "Store.h"
 
 @interface ViewController : UIViewController
 
