@@ -40,7 +40,7 @@
     }
     else
     {
-        NSLog(@"\nYou need to reload amount!\n");
+        NSLog(@"You need to reload amount!\n");
     }
 }
 
@@ -61,14 +61,14 @@
     }
     else
     {
-        NSLog(@"\nPrice calculate error!\n");
+        NSLog(@"Price calculate error!\n");
     }
     return price;
 }
 
-- (void) makeDrink
-{
-    NSLog(@"Your order is ready");
-}
+//- (void) makeDrink
+//{
+//    NSLog(@"Your order is ready");
+//}
 
 @end

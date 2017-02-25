@@ -10,16 +10,17 @@
 
 @implementation Store
 
-- (id) initWithStoreParameters:(NSString*)adsress name:(NSString*)name phoneNumber:(NSString*)phoneNumber openingHours:(NSArray<NSDate*>*)openingHours
+- (id) initWithStoreParameters:(NSString*)name address:(NSString*)address phoneNumber:(NSString*)phoneNumber openingTime:(NSData*)openingTime closingTime:(NSData*)closingTime
 {
     self = [super init];
     if(self)
     {
         self.name = name;
+        self.address = address;
         self.phoneNumber = phoneNumber;
-        self.openingHours = openingHours;
+        self.openingTime = openingTime;
+        self.closingTime = closingTime;
     }
     return self;
 }
-
 @end

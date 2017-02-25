@@ -7,16 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Staff.h"
 
 @interface Store : NSObject
 
-@property (strong, nonatomic) NSString* address;
 @property (strong, nonatomic) NSString* name;
+@property (strong, nonatomic) NSString* address;
 @property (strong, nonatomic) NSString* phoneNumber;
-@property (strong, nonatomic) NSArray<NSDate*>* openingHours;
+//@property (strong, nonatomic) NSArray<NSDate*>* openingHours;
+@property (strong, nonatomic) NSData* openingTime;
+@property (strong, nonatomic) NSData* closingTime;
+@property (strong, nonatomic) Staff* staff;
 
-- (id) initWithStoreParameters:(NSString*)adsress
-                          name:(NSString*)name
+- (id) initWithStoreParameters:(NSString*)name
+                          address:(NSString*)adsress
                    phoneNumber:(NSString*)phoneNumber
-                  openingHours:(NSArray<NSDate*>*)openingHours;
+                  openingTime:(NSData*)openingTime
+                  closingTime:(NSData*)closingTime;
 @end
