@@ -10,7 +10,7 @@
 
 @implementation Store
 
-- (id) initWithStoreParameters:(NSString*)name address:(NSString*)address phoneNumber:(NSString*)phoneNumber openingTime:(NSData*)openingTime closingTime:(NSData*)closingTime
+- (id) initWithStoreParameters:(NSString*)name address:(NSString*)address phoneNumber:(NSString*)phoneNumber openingTime:(NSInteger)openingTime closingTime:(NSInteger)closingTime
 {
     self = [super init];
     if(self)
@@ -23,4 +23,23 @@
     }
     return self;
 }
+
+- (NSString*)openStore:(NSDateComponents*)localDate
+{
+    Store * storeA = [[Store alloc] initWithStoreParameters:@"storeA" address:nil phoneNumber:nil openingTime:5 closingTime:12];
+    Store * storeB = [[Store alloc] initWithStoreParameters:@"storeB" address:nil phoneNumber:nil openingTime:12 closingTime:22];
+    
+    if(storeA.openingTime <= localDate.hour && localDate.hour < storeA.closingTime)
+    {
+        NSLog(@"StoreA open!\n");
+        return @"StoreA";
+    }
+    if(storeB.openingTime <= localDate.hour && localDate.hour < storeB.closingTime)
+    {
+        NSLog(@"StoreB open!\n");
+        return @"StoreB";
+    }
+    return 0;
+}
+
 @end

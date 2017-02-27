@@ -12,9 +12,10 @@
 
 @property (strong, nonatomic) Customer* customer;
 @property (strong, nonatomic) Card* card;
-@property (strong, nonatomic) NSDate *localDate;
+@property (strong, nonatomic) NSDateComponents *localDate;
 @property (strong, nonatomic) Store *storeA;
 @property (strong, nonatomic) Store *storeB;
+@property (strong, nonatomic) NSDate *myExpiredDate;
 
 @end
 
@@ -26,33 +27,11 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.size = @"Tall";
 
-    self.localDate = [NSDate dateWithTimeIntervalSinceNow:[[NSTimeZone systemTimeZone] secondsFromGMT]];;
+    NSDate * currentPSTDate = [self getDate];
+    Store * store = [[Store alloc]init];
+    NSString *result = [store openStore:self.localDate];
     
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
-    
-    //OpeningTime 12am
-    NSDateComponents *comOpen = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:self.localDate];
-    
-    [comOpen setHour:4];
-    
-    NSDate * openingTime = [calendar dateFromComponents:comOpen];
-    
-    //ClosingTime 10pm
-    NSDateComponents *comClose = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:self.localDate];
-    
-    [comClose setHour:14];
-    
-    NSDate * closingTime = [calendar dateFromComponents:comClose];
-
-    NSDateComponents *date = [[NSDateComponents alloc]init];
-    date.year = 1;
-    NSDate *myExpiredDate = [calendar dateByAddingComponents:date toDate:self.localDate options:0];
-    
-    Store * storeA = [[Store alloc] initWithStoreParameters:@"storeA" address:nil phoneNumber:nil openingTime:openingTime closingTime:closingTime];
-    self.storeA = storeA;
-    
-    //NSLog(@"time1:%@",today12am);
-    //NSLog(@"time2:%@",today10pm);
+    self.storeLabel.text = result;
     
     NSNumber *myUniqueID = [[NSNumber alloc] initWithInt:12345];
     NSInteger currentStars = self.starLabel.text.integerValue;
@@ -63,12 +42,71 @@
         cardLevel = @"Gold";
     }
     
-    Card * card = [[Card alloc] initWithMyParameters:self.moneyLabel.text.floatValue currentStars:currentStars uniquId:myUniqueID expiredDate:myExpiredDate cardLevel:cardLevel];
+    Card * card = [[Card alloc] initWithMyParameters:self.moneyLabel.text.floatValue currentStars:currentStars uniquId:myUniqueID expiredDate:self.myExpiredDate cardLevel:cardLevel];
         
     Customer * customer = [[Customer alloc] initWithMyInformationPrameters:@"AI" card:card];
         self.customer = customer;
         self.card = card;
 }
+
+- (NSDate*)getDate
+{
+    NSDate* date = [NSDate date];
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    
+    NSUInteger flg = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay
+    | NSCalendarUnitHour | NSCalendarUnitMinute;
+    
+    NSTimeZone* worldTimeZone = [NSTimeZone timeZoneWithName:@"PST"];
+    
+    NSDateFormatter *dateFormatter1 = [[NSDateFormatter alloc] init];
+    [dateFormatter1 setTimeZone:worldTimeZone];
+    [dateFormatter1 setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    NSString *currentPSTDateString = [dateFormatter1 stringFromDate:date];
+    
+    
+    //NSString to NSDate
+    NSDateFormatter* dateFormatter2 = [[NSDateFormatter alloc] init];
+    [dateFormatter2 setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    //for timezone
+    [dateFormatter2 setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    
+    NSDate *currentPSTDate = [dateFormatter2 dateFromString:currentPSTDateString];
+    
+    NSDateComponents* worldTime = [calendar components:flg fromDate:date];
+    
+    self.localDate = worldTime;
+    NSLog(@"%@\n",worldTime);
+    NSLog(@"%ld\n",(long)worldTime.hour);
+    
+    //for myExpiredDate tody's date + 1 year
+    NSDateComponents *dateComponents = [[NSDateComponents alloc]init];
+    dateComponents.year = 1;
+    self.myExpiredDate = [calendar dateByAddingComponents:dateComponents toDate:currentPSTDate options:0];
+    NSLog(@"%@\n",self.myExpiredDate);
+    
+    return currentPSTDate;
+}
+
+//- (void)getOpenCloseTime:(NSDate*)currentPSTDate
+//{
+//    NSCalendar* calendar = [NSCalendar currentCalendar];
+//    
+//    //OpeningTime 12am
+//    NSDateComponents *comOpen = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:currentPSTDate];
+//    
+//    [comOpen setHour:4];
+//    
+//    NSDate * openingTime = [calendar dateFromComponents:comOpen];
+//    
+//    //ClosingTime 10pm
+//    NSDateComponents *comClose = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:currentPSTDate];
+//    
+//    [comClose setHour:14];
+//    
+//    NSDate * closingTime = [calendar dateFromComponents:comClose];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
