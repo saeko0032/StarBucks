@@ -28,18 +28,23 @@
 {
     Store * storeA = [[Store alloc] initWithStoreParameters:@"storeA" address:nil phoneNumber:nil openingTime:5 closingTime:12];
     Store * storeB = [[Store alloc] initWithStoreParameters:@"storeB" address:nil phoneNumber:nil openingTime:12 closingTime:22];
+    NSString* tempString = @"";
     
+    //prioritize StoreA
     if(storeA.openingTime <= localDate.hour && localDate.hour < storeA.closingTime)
     {
         NSLog(@"StoreA open!\n");
-        return @"StoreA";
+        tempString =  @"StoreA";
     }
-    if(storeB.openingTime <= localDate.hour && localDate.hour < storeB.closingTime)
+    else if(storeB.openingTime <= localDate.hour && localDate.hour < storeB.closingTime)
     {
         NSLog(@"StoreB open!\n");
-        return @"StoreB";
+        tempString =  @"StoreB";
     }
-    return 0;
+    else{
+        tempString =  @"Closed";
+    }
+    return tempString;
 }
 
 @end
