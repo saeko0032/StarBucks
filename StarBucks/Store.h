@@ -15,13 +15,19 @@
 @property (strong, nonatomic) NSString* address;
 @property (strong, nonatomic) NSString* phoneNumber;
 //@property (strong, nonatomic) NSArray<NSDate*>* openingHours;
-@property (strong, nonatomic) NSData* openingTime;
-@property (strong, nonatomic) NSData* closingTime;
+//@property (strong, nonatomic) NSData* openingTime;
+//@property (strong, nonatomic) NSData* closingTime;
+@property (nonatomic) NSInteger openingTime;
+@property (nonatomic) NSInteger closingTime;
+
 @property (strong, nonatomic) Staff* staff;
 
 - (id) initWithStoreParameters:(NSString*)name
                           address:(NSString*)adsress
                    phoneNumber:(NSString*)phoneNumber
-                  openingTime:(NSData*)openingTime
-                  closingTime:(NSData*)closingTime;
+                  openingTime:(NSInteger)openingTime
+                  closingTime:(NSInteger)closingTime;
+
+- (NSString*)openStore:(NSDateComponents*)localDate;
+
 @end

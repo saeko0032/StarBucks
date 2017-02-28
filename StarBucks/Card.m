@@ -24,13 +24,12 @@
     return self;
 }
 
-- (void)updateMyInfo:(float)newStoredMoney addStars:(NSInteger)addStars expiredDate:(NSDate *)expiredDate
+- (void)updateMyInfo:(float)newStoredMoney addStars:(NSInteger)addStars Date:(NSDate *)currentDate
 {
     NSString *cardLevel;
-    
+    self.expiredDate = [self myExpireDateCalculate:currentDate];
     self.storedMoney = newStoredMoney;
     self.currentStars = self.currentStars + addStars;
-    self.expiredDate = expiredDate;
     if (0 < self.currentStars && self.currentStars < 300) {
         cardLevel = @"green";
     } else {
@@ -52,4 +51,14 @@
     NSLog(@"===================================\n");
 }
 
+- (NSDate*)myExpireDateCalculate:(NSDate*)currentPSTDate
+{
+    //for myExpiredDate tody's date + 1 year
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents *dateComponents = [[NSDateComponents alloc]init];
+    dateComponents.year = 1;
+    self.expiredDate = [calendar dateByAddingComponents:dateComponents toDate:currentPSTDate options:0];
+    NSLog(@"My Starbacks card will expire %@.\n",self.expiredDate);
+    return self.expiredDate;
+}
 @end
