@@ -30,9 +30,9 @@
 
     self.currentDate = [self getDate];
     Store * store = [[Store alloc]init];
-    NSString *result = [store openStore:self.localDate];
+    NSString *availableStore = [store openStore:self.localDate];
     
-    self.storeLabel.text = result;
+    self.storeLabel.text = availableStore;
     
     NSNumber *myUniqueID = [[NSNumber alloc] initWithInt:12345];
     NSInteger currentStars = self.starLabel.text.integerValue;
@@ -81,25 +81,6 @@
         
     return currentPSTDate;
 }
-
-//- (void)getOpenCloseTime:(NSDate*)currentPSTDate
-//{
-//    NSCalendar* calendar = [NSCalendar currentCalendar];
-//    
-//    //OpeningTime 12am
-//    NSDateComponents *comOpen = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:currentPSTDate];
-//    
-//    [comOpen setHour:4];
-//    
-//    NSDate * openingTime = [calendar dateFromComponents:comOpen];
-//    
-//    //ClosingTime 10pm
-//    NSDateComponents *comClose = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:currentPSTDate];
-//    
-//    [comClose setHour:14];
-//    
-//    NSDate * closingTime = [calendar dateFromComponents:comClose];
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
