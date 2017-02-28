@@ -22,8 +22,10 @@
                expiredDate:(NSDate*)expiredDate
                  cardLevel:(NSString*)cardLevel;
 
-- (void)updateMyInfo:(float)newStoredMoney addStars:(NSInteger)addStars expiredDate:(NSDate*)expiredDate;
+- (void)updateMyInfo:(float)newStoredMoney addStars:(NSInteger)addStars Date:(NSDate *)currentDate;
 
 - (void)printMyCardInfo;
+
+- (NSDate*)myExpireDateCalculate:(NSDate*)currentPSTDate;
 
 @end

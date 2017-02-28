@@ -25,7 +25,7 @@
                  workingHours:(NSArray*)workingHours
                   workingDays:(NSArray*)workingDays;
 
-- (void)takeOrder:(Customer*)customer;
+- (void)takeOrder:(Customer*)customer date:currentDate;
 - (NSInteger)calculatePrice:(Order*)order;
 //- (void) makeDrink;
 

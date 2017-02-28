@@ -13,6 +13,7 @@
 @property (strong, nonatomic) Customer* customer;
 @property (strong, nonatomic) Card* card;
 @property (strong, nonatomic) NSDateComponents *localDate;
+@property (strong, nonatomic) NSDate *currentDate;
 @property (strong, nonatomic) Store *storeA;
 @property (strong, nonatomic) Store *storeB;
 @property (strong, nonatomic) NSDate *myExpiredDate;
@@ -27,7 +28,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.size = @"Tall";
 
-    NSDate * currentPSTDate = [self getDate];
+    self.currentDate = [self getDate];
     Store * store = [[Store alloc]init];
     NSString *result = [store openStore:self.localDate];
     
@@ -77,15 +78,7 @@
     NSDateComponents* worldTime = [calendar components:flg fromDate:date];
     
     self.localDate = worldTime;
-    NSLog(@"%@\n",worldTime);
-    NSLog(@"%ld\n",(long)worldTime.hour);
-    
-    //for myExpiredDate tody's date + 1 year
-    NSDateComponents *dateComponents = [[NSDateComponents alloc]init];
-    dateComponents.year = 1;
-    self.myExpiredDate = [calendar dateByAddingComponents:dateComponents toDate:currentPSTDate options:0];
-    NSLog(@"%@\n",self.myExpiredDate);
-    
+        
     return currentPSTDate;
 }
 
@@ -133,7 +126,6 @@
             self.size = @"Grande";
         }
 }
-
 
 - (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
     return 10;
@@ -188,7 +180,6 @@
 
 - (IBAction)getOrderFromButton:(id)sender {
     
-    
     Staff * staff = [[Staff alloc]initWithStaffParameters:@"staff1" perHourWage:10 workingHours:nil workingDays:nil];
 
     Coffee * coffee = [[Coffee alloc] initWithCoffeeParameters:self.size addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
@@ -201,7 +192,7 @@
     
     [order printMyOrderInfo];
     [self.card printMyCardInfo];
-    [staff takeOrder:self.customer];
+    [staff takeOrder:self.customer date:self.currentDate];
     
     self.moneyLabel.text = [NSString stringWithFormat:@"%.2f", self.customer.card.storedMoney];
     self.starLabel.text = [NSString stringWithFormat:@"%ld", self.customer.card.currentStars];

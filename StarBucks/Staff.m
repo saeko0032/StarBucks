@@ -25,7 +25,7 @@
     return self;
 }
 
--(void)takeOrder:(Customer*)customer
+- (void)takeOrder:(Customer*)customer date:currentDate
 {
     Barista * barista = [[Barista alloc]initWithStaffParameters:@"barista1" perHourWage:20 workingHours:nil workingDays:nil];
     
@@ -35,7 +35,7 @@
         [barista makeDrink];
         NSInteger currentStoredMoney = customer.card.storedMoney - price;
         NSInteger currentAddstars = price;
-        [customer.card updateMyInfo:currentStoredMoney addStars:currentAddstars expiredDate:[NSDate date]];
+        [customer.card updateMyInfo:currentStoredMoney addStars:currentAddstars Date:currentDate];
         [customer pay];
     }
     else
