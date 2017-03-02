@@ -10,6 +10,15 @@
 #import "Barista.h"
 
 @implementation Barista
+- (id)initWithBaristaParameter:(NSString*)name perHourWage:(NSInteger)perHourWage workingHours:(NSArray*)workingHours workingDays:(NSArray*)workingDays baristaLevel:(NSInteger)baristaLevel
+{
+    self = [super initWithStaffParameters:name perHourWage:perHourWage workingHours:workingHours workingDays:workingDays];
+    if(self)
+    {
+        self.baristaLevel = baristaLevel;
+    }
+    return self;
+}
 
 - (void)makeDrink
 {

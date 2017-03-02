@@ -14,9 +14,6 @@
 @property (strong, nonatomic) NSString* name;
 @property (strong, nonatomic) NSString* address;
 @property (strong, nonatomic) NSString* phoneNumber;
-//@property (strong, nonatomic) NSArray<NSDate*>* openingHours;
-//@property (strong, nonatomic) NSData* openingTime;
-//@property (strong, nonatomic) NSData* closingTime;
 @property (nonatomic) NSInteger openingTime;
 @property (nonatomic) NSInteger closingTime;
 

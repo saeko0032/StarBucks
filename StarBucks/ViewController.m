@@ -27,6 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.size = @"Tall";
+    self.food = @"Muffin";
 
     self.currentDate = [self getDate];
     Store * store = [[Store alloc]init];
@@ -89,6 +90,18 @@
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
+}
+- (IBAction)segmentFoodChanged:(id)sender {
+    UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
+    NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
+    if (selectedSegment == 0) {
+        self.foodName = @"Scone";
+    }
+    else if (selectedSegment == 1) {
+        self.foodName = @"Muffin";
+    } else if (selectedSegment == 2) {
+        self.foodName = @"Cookie";
+    }
 }
 
 - (IBAction)segmentValueChanged:(id)sender
@@ -161,10 +174,15 @@
 
 - (IBAction)getOrderFromButton:(id)sender {
     
+    NSMutableArray <Products*>* orderArray = [[NSMutableArray alloc]init];
+    
     Staff * staff = [[Staff alloc]initWithStaffParameters:@"staff1" perHourWage:10 workingHours:nil workingDays:nil];
 
-    Coffee * coffee = [[Coffee alloc] initWithCoffeeParameters:self.size addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
-    
+    Coffee * coffee = [[Coffee alloc] initWithProductsParameters:@"123" productsName:@"coffee" addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
+
+    Food * food = [[Food alloc]initWithProductsParameters:@"456" productsName:self.foodName];
+    [orderArray addObject:coffee];
+    [orderArray addObject:food];
     Order * order = [[Order alloc] initWithOrderPrameters:self.amount coffee:coffee];
     
     self.customer.order = order;

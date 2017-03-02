@@ -17,8 +17,8 @@
 
 int main(int argc, char * argv[]) {
     
-    Starbucks* starcucks = [[Starbucks alloc] init];
-    [starcucks startWithThisFunction];
+//    Starbucks* starcucks = [[Starbucks alloc] init];
+//    [starcucks startWithThisFunction];
     
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
