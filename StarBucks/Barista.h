@@ -10,6 +10,9 @@
 
 @interface Barista : Staff
 
+@property (nonatomic)NSInteger baristaLevel;
+
+- (id)initWithBaristaParameter:(NSString*)name perHourWage:(NSInteger)perHourWage workingHours:(NSArray*)workingHours workingDays:(NSArray*)workingDays baristaLevel:(NSInteger)baristaLevel;
 - (void)makeDrink;
 
 @end

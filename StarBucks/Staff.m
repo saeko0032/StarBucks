@@ -7,7 +7,6 @@
 //
 
 #import "Staff.h"
-
 #import "Barista.h"
 
 @implementation Staff
@@ -20,14 +19,15 @@
         self.name = name;
         self.perHourWage = perHourWage;
         self.workingHours = workingHours;
-        self. workingDays = workingDays;
+        self.workingDays = workingDays;
     }
     return self;
 }
 
 - (void)takeOrder:(Customer*)customer date:currentDate
 {
-    Barista * barista = [[Barista alloc]initWithStaffParameters:@"barista1" perHourWage:20 workingHours:nil workingDays:nil];
+    Barista * barista = [[Barista alloc]initWithBaristaParameter:@"barista" perHourWage:20 workingHours:nil workingDays:nil baristaLevel:0];
+    //Barista * barista = [[Barista alloc]initWithStaffParameters:@"barista1" perHourWage:20 workingHours:nil workingDays:nil baristaLevel:baristaLevel];
     
     NSInteger price = [self calculatePrice:customer.order];
     if(price < customer.card.storedMoney)

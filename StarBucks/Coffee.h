@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Products.h"
 
-@interface Coffee : NSObject
+@interface Coffee : Products
 
 @property (strong, nonatomic) NSString* size;
 @property (strong, nonatomic) NSString* addIns;
@@ -17,7 +18,9 @@
 @property (strong, nonatomic) NSString* flavours;
 @property (strong, nonatomic) NSString* toppings;
 
-- (id)initWithCoffeeParameters:(NSString *)size
+- (id)initWithProductsParameters:(NSString*)productsID
+                    productsName:(NSString*)productsName
+                            size:(NSString*)size
                         addIns:(NSString*)addIns
                   serveOptions:(NSString*)serveOptions
                    shotOptions:(NSString*)shotOptions
