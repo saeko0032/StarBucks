@@ -26,15 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.size = @"Tall";
-    self.foodName = @"Muffin";
-
-    self.currentDate = [self getDate];
-    Store * store = [[Store alloc]init];
-    NSString *availableStore = [store openStore:self.localDate];
-    
-    self.storeLabel.text = availableStore;
-    
+    // check my Card status
     NSNumber *myUniqueID = [[NSNumber alloc] initWithInt:12345];
     NSInteger currentStars = self.starLabel.text.integerValue;
     NSString *cardLevel;
@@ -43,44 +35,22 @@
     } else {
         cardLevel = @"Gold";
     }
-    
     Card * card = [[Card alloc] initWithMyParameters:self.moneyLabel.text.floatValue currentStars:currentStars uniquId:myUniqueID expiredDate:self.myExpiredDate cardLevel:cardLevel];
-        
+    self.card = card;
+    
+    // initialize segment Value
+    self.foodName = @"Muffin";
+    self.size = @"Tall";
+    
+    // check available Store by checking time
+    self.currentDate = [self getDate];
+    Store * store = [[Store alloc]init];
+    NSString *availableStore = [store openStore:self.localDate];
+    self.storeLabel.text = availableStore;
+    
+    // create customer by avobe information
     Customer * customer = [[Customer alloc] initWithMyInformationPrameters:@"AI" card:card];
-        self.customer = customer;
-        self.card = card;
-}
-
-- (NSDate*)getDate
-{
-    NSDate* date = [NSDate date];
-    NSCalendar* calendar = [NSCalendar currentCalendar];
-    
-    NSUInteger flg = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay
-    | NSCalendarUnitHour | NSCalendarUnitMinute;
-    
-    NSTimeZone* worldTimeZone = [NSTimeZone timeZoneWithName:@"PST"];
-    
-    NSDateFormatter *dateFormatter1 = [[NSDateFormatter alloc] init];
-    [dateFormatter1 setTimeZone:worldTimeZone];
-    [dateFormatter1 setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    
-    NSString *currentPSTDateString = [dateFormatter1 stringFromDate:date];
-    
-    
-    //NSString to NSDate
-    NSDateFormatter* dateFormatter2 = [[NSDateFormatter alloc] init];
-    [dateFormatter2 setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    //for timezone
-    [dateFormatter2 setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-    
-    NSDate *currentPSTDate = [dateFormatter2 dateFromString:currentPSTDateString];
-    
-    NSDateComponents* worldTime = [calendar components:flg fromDate:date];
-    
-    self.localDate = worldTime;
-        
-    return currentPSTDate;
+    self.customer = customer;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,9 +58,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
+- (IBAction)reloadMoneyFromButton:(id)sender {
+    float reloadMoney = self.reloadMoney.text.floatValue;
+    [self.customer reloadStoredMoney:reloadMoney];
+    self.moneyLabel.text = [NSString stringWithFormat:@"%.2f", self.customer.card.storedMoney];
+    //self.starLabel.text = [NSString stringWithFormat:@"%ld", self.customer.card.currentStars];
+    self.reloadMoney.text = @"";
+    NSLog(@"Reloaded!\n");
 }
+
 - (IBAction)segmentFoodChanged:(id)sender {
     UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
     NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
@@ -121,6 +97,10 @@
         }
 }
 
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
 - (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
     return 10;
 }
@@ -130,46 +110,78 @@
     switch(row) {
         case 0:
             title = @"1";
-            self.amount = 1;
+            self.coffeeAmount = 1;
             break;
         case 1:
             title = @"2";
-            self.amount = 2;
+            self.coffeeAmount = 2;
             break;
         case 2:
             title = @"3";
-            self.amount = 3;
+            self.coffeeAmount = 3;
             break;
         case 3:
             title = @"4";
-            self.amount = 4;
+            self.coffeeAmount = 4;
             break;
         case 4:
             title = @"5";
-            self.amount = 5;
+            self.coffeeAmount = 5;
             break;
         case 5:
             title = @"6";
-            self.amount = 6;
+            self.coffeeAmount = 6;
             break;
         case 6:
             title = @"7";
-            self.amount = 7;
+            self.coffeeAmount = 7;
             break;
         case 7:
             title = @"8";
-            self.amount = 8;
+            self.coffeeAmount = 8;
             break;
         case 8:
             title = @"9";
-            self.amount = 9;
+            self.coffeeAmount = 9;
             break;
         case 9:
             title = @"10";
-            self.amount = 10;
+            self.coffeeAmount = 10;
             break;
     }
     return title;
+}
+
+- (NSDate*)getDate
+{
+    NSDate* date = [NSDate date];
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    
+    NSUInteger flg = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay
+    | NSCalendarUnitHour | NSCalendarUnitMinute;
+    
+    NSTimeZone* worldTimeZone = [NSTimeZone timeZoneWithName:@"PST"];
+    
+    NSDateFormatter *dateFormatter1 = [[NSDateFormatter alloc] init];
+    [dateFormatter1 setTimeZone:worldTimeZone];
+    [dateFormatter1 setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    NSString *currentPSTDateString = [dateFormatter1 stringFromDate:date];
+    
+    
+    //NSString to NSDate
+    NSDateFormatter* dateFormatter2 = [[NSDateFormatter alloc] init];
+    [dateFormatter2 setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    //for timezone
+    [dateFormatter2 setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    
+    NSDate *currentPSTDate = [dateFormatter2 dateFromString:currentPSTDateString];
+    
+    NSDateComponents* worldTime = [calendar components:flg fromDate:date];
+    
+    self.localDate = worldTime;
+    
+    return currentPSTDate;
 }
 
 - (IBAction)getOrderFromButton:(id)sender {
@@ -183,10 +195,18 @@
     Food * food = [[Food alloc]initWithProductsParameters:@"456" productsName:self.foodName];
     [orderArray addObject:coffee];
     [orderArray addObject:food];
-    Order * order = [[Order alloc] initWithOrderPrameters:self.amount coffee:coffee];
+    
+    Order * order = [[Order alloc] initWithOrderPrameters:self.coffeeAmount coffee:coffee foodAmount:1 food:food];
+    
+    for(int i = 0; i < orderArray.count; i++) {
+        if([[orderArray objectAtIndex:i] isMemberOfClass:[Coffee class]]) {
+            self.customer.order.coffee = coffee;
+        } else if([[orderArray objectAtIndex:i] isMemberOfClass:[Food class]]) {
+            self.customer.order.food = food;
+        }
+    }
     
     self.customer.order = order;
-    self.customer.order.coffee = coffee;
     self.customer.card = self.card;
     
     [order printMyOrderInfo];
@@ -197,13 +217,5 @@
     self.starLabel.text = [NSString stringWithFormat:@"%ld", self.customer.card.currentStars];
 }
 
-- (IBAction)reloadMoneyFromButton:(id)sender {
-    float reloadMoney = self.reloadMoney.text.floatValue;
-    [self.customer reloadStoredMoney:reloadMoney];
-    self.moneyLabel.text = [NSString stringWithFormat:@"%.2f", self.customer.card.storedMoney];
-    self.starLabel.text = [NSString stringWithFormat:@"%ld", self.customer.card.currentStars];
-    self.reloadMoney.text = @"";
-    NSLog(@"Reloaded!\n");
-}
 
 @end

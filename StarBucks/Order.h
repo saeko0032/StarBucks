@@ -8,15 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "Coffee.h"
+#import "Food.h"
 
 @interface Order : NSObject
 
-@property (nonatomic) NSInteger amount;
-@property (strong,nonatomic) Coffee* coffee;
+@property (nonatomic) NSInteger coffeeAmount;
+@property (nonatomic) NSInteger foodAmount;
+@property (strong, nonatomic) Coffee* coffee;
+@property (strong, nonatomic) Food* food;
 
 
--(id)initWithOrderPrameters:(NSInteger)amount
-                     coffee:(Coffee*)coffee;
+-(id)initWithOrderPrameters:(NSInteger)coffeeAmount
+                     coffee:(Coffee *)coffee
+                 foodAmount:(NSInteger)foodAmount
+                       food:(Food*)food;
 
 - (void)printMyOrderInfo;
 

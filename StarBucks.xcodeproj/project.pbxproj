@@ -22,6 +22,8 @@
 		EA23DE7A1E5BD549008A6971 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE791E5BD549008A6971 /* Store.m */; };
 		EA23DE7F1E5BD66D008A6971 /* Coffee.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE7C1E5BD66D008A6971 /* Coffee.m */; };
 		EA23DE801E5BD66D008A6971 /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = EA23DE7E1E5BD66D008A6971 /* Order.m */; };
+		EAA491361E68FE2000E95426 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA491351E68FE2000E95426 /* Food.m */; };
+		EAA491391E68FE2900E95426 /* Products.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA491381E68FE2800E95426 /* Products.m */; };
 		ED22B6C11E5E82E30030B71C /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED22B6C01E5E82E30030B71C /* test.jpg */; };
 		EDA8139A1E5BDA8600F1C1B4 /* Starbucks.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA813991E5BDA8600F1C1B4 /* Starbucks.m */; };
 /* End PBXBuildFile section */
@@ -55,6 +57,10 @@
 		EA23DE7C1E5BD66D008A6971 /* Coffee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coffee.m; sourceTree = "<group>"; };
 		EA23DE7D1E5BD66D008A6971 /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		EA23DE7E1E5BD66D008A6971 /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
+		EAA491341E68FE2000E95426 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
+		EAA491351E68FE2000E95426 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
+		EAA491371E68FE2800E95426 /* Products.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Products.h; sourceTree = "<group>"; };
+		EAA491381E68FE2800E95426 /* Products.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Products.m; sourceTree = "<group>"; };
 		ED22B6C01E5E82E30030B71C /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		EDA813981E5BDA8600F1C1B4 /* Starbucks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Starbucks.h; sourceTree = "<group>"; };
 		EDA813991E5BDA8600F1C1B4 /* Starbucks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Starbucks.m; sourceTree = "<group>"; };
@@ -94,6 +100,10 @@
 				EA23DE6E1E5BD4DB008A6971 /* Card */,
 				EDA813981E5BDA8600F1C1B4 /* Starbucks.h */,
 				EDA813991E5BDA8600F1C1B4 /* Starbucks.m */,
+				EAA491371E68FE2800E95426 /* Products.h */,
+				EAA491381E68FE2800E95426 /* Products.m */,
+				EAA491341E68FE2000E95426 /* Food.h */,
+				EAA491351E68FE2000E95426 /* Food.m */,
 				EA23DE6B1E5BD4BF008A6971 /* Customer.h */,
 				EA23DE6C1E5BD4BF008A6971 /* Customer.m */,
 				EA23DE7B1E5BD66D008A6971 /* Coffee.h */,
@@ -108,7 +118,7 @@
 				EA23DE4E1E5BBF11008A6971 /* ViewController.m */,
 				EA23DE501E5BBF11008A6971 /* Main.storyboard */,
 				EA23DE531E5BBF11008A6971 /* Assets.xcassets */,
-				ED22B6C01E5E82E30030B71C /* test.jpg */,
+				EAA4913A1E69105400E95426 /* img */,
 				EA23DE551E5BBF11008A6971 /* LaunchScreen.storyboard */,
 				EA23DE581E5BBF11008A6971 /* Info.plist */,
 				EA23DE471E5BBF11008A6971 /* Supporting Files */,
@@ -146,6 +156,14 @@
 				EA23DE761E5BD50E008A6971 /* GoldCard.m */,
 			);
 			name = Card;
+			sourceTree = "<group>";
+		};
+		EAA4913A1E69105400E95426 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				ED22B6C01E5E82E30030B71C /* test.jpg */,
+			);
+			name = img;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,7 +238,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAA491391E68FE2900E95426 /* Products.m in Sources */,
 				EA23DE661E5BD44E008A6971 /* Staff.m in Sources */,
+				EAA491361E68FE2000E95426 /* Food.m in Sources */,
 				EA23DE4F1E5BBF11008A6971 /* ViewController.m in Sources */,
 				EA23DE691E5BD468008A6971 /* Barista.m in Sources */,
 				EA23DE7A1E5BD549008A6971 /* Store.m in Sources */,

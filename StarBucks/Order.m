@@ -10,12 +10,14 @@
 
 @implementation Order
 
--(id)initWithOrderPrameters:(NSInteger)amount coffee:(Coffee *)coffee
+-(id)initWithOrderPrameters:(NSInteger)coffeeAmount coffee:(Coffee *)coffee foodAmount:(NSInteger)foodAmount food:(Food*)food
 {
     self = [super init];
     if (self) {
-        self.amount = amount;
+        self.coffeeAmount = coffeeAmount;
         self.coffee = coffee;
+        self.foodAmount = foodAmount;
+        self.food = food;
     }
     return self;
 }
@@ -24,7 +26,7 @@
 {
     NSLog(@"\n===================================\n");
     NSLog(@"Your order is \n");
-    NSLog(@"Amount: %ld\n",(long)self.amount);
+    NSLog(@"coffeeAmount: %ld\n",(long)self.coffeeAmount);
     NSLog(@"Size: %@\n",self.coffee.size);
     NSLog(@"\n===================================\n");
 }

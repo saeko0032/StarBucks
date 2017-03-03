@@ -28,7 +28,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *storeLabel;
 
 @property (strong,nonatomic) NSString* size;
-@property (nonatomic) NSInteger amount;
+@property (nonatomic) NSInteger coffeeAmount;
 @property (strong,nonatomic)NSString* foodName;
+
 @end
 
