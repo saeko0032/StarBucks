@@ -27,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.size = @"Tall";
-    self.food = @"Muffin";
+    self.foodName = @"Muffin";
 
     self.currentDate = [self getDate];
     Store * store = [[Store alloc]init];
@@ -178,7 +178,7 @@
     
     Staff * staff = [[Staff alloc]initWithStaffParameters:@"staff1" perHourWage:10 workingHours:nil workingDays:nil];
 
-    Coffee * coffee = [[Coffee alloc] initWithProductsParameters:@"123" productsName:@"coffee" addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
+    Coffee * coffee = [[Coffee alloc] initWithProductsParameters:@"123" productsName:@"coffee" size:self.size addIns:nil serveOptions:nil shotOptions:nil flavours:nil toppings:nil];
 
     Food * food = [[Food alloc]initWithProductsParameters:@"456" productsName:self.foodName];
     [orderArray addObject:coffee];

@@ -18,8 +18,9 @@
 @property (strong, nonatomic) NSString* flavours;
 @property (strong, nonatomic) NSString* toppings;
 
-- (id)initWithProductsParameters:(NSString *)productsID
-                    productsName:(NSString *)productsName
+- (id)initWithProductsParameters:(NSString*)productsID
+                    productsName:(NSString*)productsName
+                            size:(NSString*)size
                         addIns:(NSString*)addIns
                   serveOptions:(NSString*)serveOptions
                    shotOptions:(NSString*)shotOptions

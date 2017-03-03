@@ -10,7 +10,7 @@
 
 @implementation Coffee
 
-- (id)initWithCoffeeParameters:(NSString *)size addIns:(NSString *)addIns serveOptions:(NSString *)serveOptions shotOptions:(NSString *)shotOptions flavours:(NSString *)flavours toppings:(NSString *)toppings
+- (id)initWithProductsParameters:(NSString *)productsID productsName:(NSString *)productsName size:(NSString *)size addIns:(NSString *)addIns serveOptions:(NSString *)serveOptions shotOptions:(NSString *)shotOptions flavours:(NSString *)flavours toppings:(NSString *)toppings
 {
     self = [super init];
     if (self) {

@@ -10,10 +10,14 @@
 #import "AppDelegate.h"
 #import "Starbucks.h"
 #import "Staff.h"
+#import "Barista.h"
+#import "Products.h"
+#import "Food.h"
 #import "Customer.h"
 #import "Coffee.h"
 #import "Order.h"
 #import "Card.h"
+
 
 int main(int argc, char * argv[]) {
     
